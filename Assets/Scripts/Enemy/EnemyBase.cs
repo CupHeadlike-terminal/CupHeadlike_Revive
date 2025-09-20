@@ -2,117 +2,174 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
-/// ‘SƒGƒlƒ~[‹¤’Êˆ—ƒNƒ‰ƒX
+/// ï¿½Sï¿½Gï¿½lï¿½~ï¿½[ï¿½ï¿½ï¿½Êï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½X
 /// </summary>
 public class EnemyBase : MonoBehaviour
 {
-    // ƒIƒuƒWƒFƒNƒgEƒRƒ“ƒ|[ƒlƒ“ƒg
-    [HideInInspector] public AreaManager areaManager; // ƒGƒŠƒAƒ}ƒl[ƒWƒƒ
+    // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Eï¿½Rï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½g
+    [HideInInspector] public AreaManager areaManager; // ï¿½Gï¿½ï¿½ï¿½Aï¿½}ï¿½lï¿½[ï¿½Wï¿½ï¿½
     protected Rigidbody2D rigidbody2D; // RigidBody2D
-    protected SpriteRenderer spriteRenderer;// “GƒXƒvƒ‰ƒCƒg
-    protected Transform actorTransform; // ålŒö(ƒAƒNƒ^[)‚ÌTransform
+    protected SpriteRenderer spriteRenderer;// ï¿½Gï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½g
+    protected Transform actorTransform; // ï¿½ï¿½lï¿½ï¿½(ï¿½Aï¿½Nï¿½^ï¿½[)ï¿½ï¿½Transform
 
-    // Šeí•Ï”
-    // Šî‘bƒf[ƒ^(ƒCƒ“ƒXƒyƒNƒ^‚©‚ç“ü—Í)
-    [Header("Å‘å‘Ì—Í(‰Šú‘Ì—Í)")]
+    // ï¿½æ‘œï¿½fï¿½ï¿½
+    public Sprite sprite_Defeat; // ï¿½íŒ‚ï¿½jï¿½ï¿½ï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½g(ï¿½ï¿½ï¿½ï¿½ï¿½)
+
+    // ï¿½eï¿½ï¿½Ïï¿½
+    // ï¿½ï¿½bï¿½fï¿½[ï¿½^(ï¿½Cï¿½ï¿½ï¿½Xï¿½yï¿½Nï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+    [Header("ï¿½Å‘ï¿½Ì—ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½Ì—ï¿½)")]
     public int maxHP;
-    [Header("ÚGƒAƒNƒ^[‚Ö‚Ìƒ_ƒ[ƒW")]
+    [Header("ï¿½ÚGï¿½ï¿½ï¿½Aï¿½Nï¿½^ï¿½[ï¿½Ö‚Ìƒ_ï¿½ï¿½ï¿½[ï¿½W")]
     public int touchDamage;
-    // ‚»‚Ì‘¼ƒf[ƒ^
-    [HideInInspector] public int nowHP; // c‚èHP
-    [HideInInspector] public bool isInvis; // –³“Gƒ‚[ƒh
-    [HideInInspector] public bool rightFacing; // ‰EŒü‚«ƒtƒ‰ƒO(false‚Å¶Œü‚«)
+    [Header("ï¿½{ï¿½Xï¿½Gï¿½tï¿½ï¿½ï¿½O(ONï¿½Åƒ{ï¿½Xï¿½Gï¿½Æ‚ï¿½ï¿½Äˆï¿½ï¿½ï¿½ï¿½Bï¿½Pï¿½Xï¿½eï¿½[ï¿½Wï¿½É‚Pï¿½Ì‚Ì‚ï¿½)")]
+    public bool isBoss;
+    // ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½fï¿½[ï¿½^
+    [HideInInspector] public int nowHP; // ï¿½cï¿½ï¿½HP
+    [HideInInspector] public bool isVanishing; // ï¿½ï¿½ï¿½Å’ï¿½ï¿½tï¿½ï¿½ï¿½O trueï¿½Åï¿½ï¿½Å’ï¿½ï¿½Å‚ï¿½ï¿½ï¿½
+    [HideInInspector] public bool isInvis; // ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½[ï¿½h
+    [HideInInspector] public bool rightFacing; // ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O(falseï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½)
 
-    // ‰Šú‰»ŠÖ”(AreaManager.cs‚©‚çŒÄo)
+    // DoTweenï¿½p
+    private Tween damageTween;  // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½oTween
+
+    // ï¿½è”ï¿½ï¿½`
+    private readonly Color COL_DEFAULT = new Color(1.0f, 1.0f, 1.0f, 1.0f);    // ï¿½Êíï¿½Jï¿½ï¿½ï¿½[
+    private readonly Color COL_DAMAGED = new Color(1.0f, 0.1f, 0.1f, 1.0f);    // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½[
+    private const float KNOCKBACK_X = 1.8f; // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½mï¿½bï¿½Nï¿½oï¿½bï¿½Nï¿½ï¿½(xï¿½ï¿½ï¿½ï¿½)
+    private const float KNOCKBACK_Y = 0.3f; // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½mï¿½bï¿½Nï¿½oï¿½bï¿½Nï¿½ï¿½(yï¿½ï¿½ï¿½ï¿½)
+
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öï¿½(AreaManager.csï¿½ï¿½ï¿½ï¿½Äo)
     public void Init(AreaManager _areaManager)
     {
-        // QÆæ“¾
+        // ï¿½Qï¿½Ææ“¾
         areaManager = _areaManager;
         actorTransform = areaManager.stageManager.actorController.transform;
         rigidbody2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // •Ï”‰Šú‰»
+        // ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        rigidbody2D.freezeRotation = true;
         nowHP = maxHP;
         if (transform.localScale.x > 0.0f)
             rightFacing = true;
 
-        // ƒGƒŠƒA‚ªƒAƒNƒeƒBƒu‚É‚È‚é‚Ü‚Å‰½‚àˆ—‚¹‚¸‘Ò‹@
+        // ï¿½Gï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Aï¿½Nï¿½eï¿½Bï¿½uï¿½É‚È‚ï¿½Ü‚Å‰ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò‹@
         gameObject.SetActive(false);
     }
     /// <summary>
-    /// ‚±‚Ìƒ‚ƒ“ƒXƒ^[‚Ì‹‚éƒGƒŠƒA‚ÉƒAƒNƒ^[‚ªi“ü‚µ‚½‚Ìˆ—(ƒGƒŠƒAƒAƒNƒeƒBƒu‰»ˆ—)
+    /// ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Xï¿½^ï¿½[ï¿½Ì‹ï¿½ï¿½ï¿½Gï¿½ï¿½ï¿½Aï¿½ÉƒAï¿½Nï¿½^ï¿½[ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½(ï¿½Gï¿½ï¿½ï¿½Aï¿½Aï¿½Nï¿½eï¿½Bï¿½uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
     /// </summary>
     public virtual void OnAreaActivated()
     {
-        // ‚±‚Ìƒ‚ƒ“ƒXƒ^[‚ğƒAƒNƒeƒBƒu‰»
+        // ï¿½ï¿½ï¿½Ìƒï¿½ï¿½ï¿½ï¿½Xï¿½^ï¿½[ï¿½ï¿½ï¿½Aï¿½Nï¿½eï¿½Bï¿½uï¿½ï¿½
         gameObject.SetActive(true);
     }
 
     /// <summary>
-    /// ƒ_ƒ[ƒW‚ğó‚¯‚éÛ‚ÉŒÄ‚Ño‚³‚ê‚é
+    /// ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½ó‚¯‚ï¿½Û‚ÉŒÄ‚Ñoï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
-    /// <param name="damage">ƒ_ƒ[ƒW—Ê</param>
-    /// <returns>ƒ_ƒ[ƒW¬Œ÷ƒtƒ‰ƒO true‚Å¬Œ÷</returns>
+    /// <param name="damage">ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½</param>
+    /// <returns>ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O trueï¿½Åï¿½ï¿½ï¿½</returns>
     public bool Damaged(int damage)
     {
-        // ƒ_ƒ[ƒWˆ—
+        // ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½
         nowHP -= damage;
 
-        if (nowHP <= 0.0f)
-        {// HP0‚Ìê‡
-            Vanish();
+        if (nowHP <= 0)
+        {// HP0ï¿½Ìê‡
+         // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½WTweenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (damageTween != null)
+                damageTween.Kill();
+            damageTween = null;
+
+            // ï¿½ï¿½ï¿½Å’ï¿½ï¿½tï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½Zï¿½bï¿½g
+            isVanishing = true;
+            // ï¿½ï¿½ï¿½Å’ï¿½ï¿½Í•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Zï¿½È‚ï¿½
+            rigidbody2D.linearVelocity = Vector2.zero;
+            rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
+            // ï¿½_ï¿½ÅŒï¿½Éï¿½ï¿½Åï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½(DoTweenï¿½gï¿½p)
+            spriteRenderer.DOFade(0.0f, 0.15f) // 0.15ï¿½b*ï¿½ï¿½ï¿½[ï¿½vï¿½ñ”•ï¿½ï¿½ÌÄï¿½ï¿½ï¿½ï¿½ï¿½
+                .SetEase(Ease.Linear)          // ï¿½Ï‰ï¿½ï¿½Ìdï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½
+                .SetLoops(7, LoopType.Yoyo)    // 7ï¿½ñƒ‹[ï¿½vï¿½Äï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í‹tï¿½Äï¿½)
+                .OnComplete(Vanish);   // ï¿½Äï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Vanish()ï¿½ï¿½ï¿½Ä‚Ñoï¿½ï¿½ï¿½İ’ï¿½
+
+            // ï¿½íŒ‚ï¿½jï¿½ï¿½ï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î•\ï¿½ï¿½
+            if (sprite_Defeat != null)
+                spriteRenderer.sprite = sprite_Defeat;
+
+            // ï¿½ï¿½ï¿½Ì‘ï¿½ï¿½ï¿½ï¿½jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (isBoss)
+            {// ï¿½{ï¿½Xï¿½ï¿½ï¿½jï¿½ï¿½
+            }
+            else
+            {// ï¿½Uï¿½Rï¿½ï¿½ï¿½jï¿½ï¿½
+            }
         }
         else
-        {// ‚Ü‚¾HP‚ªc‚Á‚Ä‚¢‚éê‡
-
+        {// ï¿½Ü‚ï¿½HPï¿½ï¿½ï¿½cï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ê‡
+         // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½WTweenï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (damageTween != null)
+                damageTween.Kill();
+            damageTween = null;
+            // ï¿½ï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½ï¿½oï¿½Äï¿½
+            // (ï¿½ï¿½uï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½gï¿½ï¿½ÔFï¿½É•ÏXï¿½ï¿½ï¿½ï¿½)
+            if (!isInvis)
+            {
+                spriteRenderer.color = COL_DAMAGED; // ï¿½ÔFï¿½É•ÏX
+                damageTween = spriteRenderer.DOColor(COL_DEFAULT, 1.0f);   // DoTweenï¿½Åï¿½ï¿½Xï¿½É–ß‚ï¿½
+            }
         }
 
         return true;
     }
     /// <summary>
-    /// ƒGƒlƒ~[‚ªÁ–Å‚·‚éÛ‚ÉŒÄ‚Ño‚³‚ê‚é
+    /// ï¿½Gï¿½lï¿½~ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½Å‚ï¿½ï¿½ï¿½Û‚ÉŒÄ‚Ñoï¿½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     private void Vanish()
     {
-        // ƒIƒuƒWƒFƒNƒgÁ–Å
+        // ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½
         Destroy(gameObject);
     }
 
     /// <summary>
-    /// ƒAƒNƒ^[‚ÉÚGƒ_ƒ[ƒW‚ğ—^‚¦‚éˆ—
+    /// ï¿½Aï¿½Nï¿½^ï¿½[ï¿½ÉÚGï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½^ï¿½ï¿½ï¿½éˆï¿½ï¿½
     /// </summary>
     public void BodyAttack(GameObject actorObj)
     {
-        // ƒAƒNƒ^[‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğæ“¾
+        // ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Å’ï¿½ï¿½È‚ç–³ï¿½ï¿½
+        if (isVanishing)
+            return;
+
+        // ï¿½Aï¿½Nï¿½^ï¿½[ï¿½ÌƒRï¿½ï¿½ï¿½|ï¿½[ï¿½lï¿½ï¿½ï¿½gï¿½ï¿½ï¿½æ“¾
         ActorController actorCtrl = actorObj.GetComponent<ActorController>();
         if (actorCtrl == null)
             return;
 
-        // ƒAƒNƒ^[‚ÉÚGƒ_ƒ[ƒW‚ğ—^‚¦‚é
+        // ï¿½Aï¿½Nï¿½^ï¿½[ï¿½ÉÚGï¿½_ï¿½ï¿½ï¿½[ï¿½Wï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½
         actorCtrl.Damaged(touchDamage);
     }
 
     /// <summary>
-    /// ƒIƒuƒWƒFƒNƒg‚ÌŒü‚«‚ğ¶‰E‚ÅŒˆ’è‚·‚é
+    /// ï¿½Iï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½ÅŒï¿½ï¿½è‚·ï¿½ï¿½
     /// </summary>
-    /// <param name="isRight">‰EŒü‚«ƒtƒ‰ƒO</param>
+    /// <param name="isRight">ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½O</param>
     public void SetFacingRight(bool isRight)
     {
         if (!isRight)
-        {// ¶Œü‚«
-         // ƒXƒvƒ‰ƒCƒg‚ğ’Êí‚ÌŒü‚«‚Å•\¦
+        {// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+         // ï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½gï¿½ï¿½Êï¿½ÌŒï¿½ï¿½ï¿½ï¿½Å•\ï¿½ï¿½
             spriteRenderer.flipX = false;
-            // ‰EŒü‚«ƒtƒ‰ƒOoff
+            // ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Ooff
             rightFacing = false;
         }
         else
-        {// ‰EŒü‚«
-         // ƒXƒvƒ‰ƒCƒg‚ğ¶‰E”½“]‚µ‚½Œü‚«‚Å•\¦
+        {// ï¿½Eï¿½ï¿½ï¿½ï¿½
+         // ï¿½Xï¿½vï¿½ï¿½ï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Eï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å•\ï¿½ï¿½
             spriteRenderer.flipX = true;
-            // ‰EŒü‚«ƒtƒ‰ƒOon
+            // ï¿½Eï¿½ï¿½ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½Oon
             rightFacing = true;
         }
     }

@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\terminal\\CupHeadlike\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|C:\\terminal\\CupHeadlike\\assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\enemy\\enemy_snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemy_snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike\\assets\\scripts\\enemy\\enemybodyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|C:\\terminal\\CupHeadlike\\assets\\scripts\\enemy\\enemybodyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3BC5F0FF-9888-17CA-243D-6EC6BE925FD7}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemybodyattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Enemy_Snake.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\Enemy_Snake.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T11:04:24.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "EnemyBodyAttack.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBodyAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBodyAttack.cs",
@@ -46,12 +63,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemyBodyAttack.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-19T08:18:04.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-19T08:18:04.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ActorSprite.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorSprite.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorSprite.cs",
@@ -63,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ActorController.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
@@ -75,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "StageManager.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\StageManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StageManager.cs",
@@ -87,20 +103,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
               "ToolTip": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
               "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAAAF4AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAAAK8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T07:16:01.565Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Camera Controller.cs",
               "DocumentMoniker": "C:\\terminal\\CupHeadlike\\Assets\\Scripts\\Camera Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Camera Controller.cs",
@@ -108,8 +124,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Camera Controller.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAACsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T08:35:55.334Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-18T08:35:55.334Z"
             }
           ]
         }
