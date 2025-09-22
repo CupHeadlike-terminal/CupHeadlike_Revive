@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 /// <summary>
 /// ステージマネージャクラス
@@ -12,6 +13,8 @@ public class StageManager : MonoBehaviour
 
     [Header("初期エリアのAreaManager")]
     public AreaManager initArea; // ステージ内の最初のエリア(初期エリア)
+    [Header("ボス戦用BGMのAudioClip")]
+    public AudioClip bossBGMClip;
 
     // ステージ内の全エリアの配列(Startで取得)
     private AreaManager[] inStageAreas;
@@ -39,5 +42,31 @@ public class StageManager : MonoBehaviour
     {
         foreach (var targetAreaManager in inStageAreas)
             targetAreaManager.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// ボス戦用BGMを再生する
+    /// </summary>
+    public void PlayBossBGM()
+    {
+        // BGMを変更する
+        GetComponent<AudioSource>().clip = bossBGMClip;
+        GetComponent<AudioSource>().Play();
+    }
+
+    /// <summary>
+    /// ステージクリア時処理
+    /// </summary>
+    public void StageClear()
+    {
+        // ステージクリア処理
+    }
+
+    /// <summary>
+    /// ゲームオーバー処理
+    /// </summary>
+    public void GameOver()
+    {
+        // ゲームオーバー処理
     }
 }

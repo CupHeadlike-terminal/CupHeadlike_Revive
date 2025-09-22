@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Actor\ActorGroundSensor.cs" />
     <Compile Include="Assets\Scripts\AreaManager.cs" />
     <Compile Include="Assets\Scripts\ScrollEnter.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Boss_Dog.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorController.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBodyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
