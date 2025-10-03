@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\Actor\ActorNormalShot.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss_Dog.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorController.cs" />
+    <Compile Include="Assets\Scripts\StageSelectManager.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_DamageBlock.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBodyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
