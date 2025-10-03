@@ -8,10 +8,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:Assets/Prefabs/Spike.prefab
   - component: {fileID: 4828108277059738302}
   - component: {fileID: 4111446244817994565}
   - component: {fileID: 4876921782358965604}
   - component: {fileID: 7911665653705552041}
+=======
+  - component: {fileID: 625507652398287148}
+  - component: {fileID: 1624711003030614248}
+  - component: {fileID: 8027284613437842554}
+>>>>>>> parent of dca8166 (コミット＜＞):Assets/Prefabs/Attack_Actor/ActorShot_Laser.prefab
   m_Layer: 0
   m_Name: Spike
   m_TagString: Ground
@@ -135,6 +141,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+<<<<<<< HEAD:Assets/Prefabs/Spike.prefab
 --- !u!114 &7911665653705552041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +155,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+=======
+>>>>>>> parent of dca8166 (コミット＜＞):Assets/Prefabs/Attack_Actor/ActorShot_Laser.prefab
