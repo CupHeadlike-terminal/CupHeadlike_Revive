@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 /// <summary>
 /// アクター操作・制御クラス
@@ -14,10 +16,11 @@ public class ActorController : MonoBehaviour
     private ActorSprite actorSprite; // アクタースプライト設定クラス
     public CameraController cameraController; // カメラ制御クラス
     public GameObject weaponBulletPrefab; // 弾プレハブ
-<<<<<<< HEAD
     public Image hpGage; // HPゲージ
-=======
->>>>>>> parent of dca8166 (コミット＜＞)
+
+    // 設定項目
+    [Header("true:足場が滑るモード")]
+    public bool icyGroundMode;
 
     // 体力変数
     [HideInInspector] public int nowHP; // 現在HP
@@ -35,19 +38,12 @@ public class ActorController : MonoBehaviour
     [HideInInspector] public bool inWaterMode; // true:水中モード(メソッドから変更)
 
     // 定数定義
-<<<<<<< HEAD
-    private const int InitialHP = 30;           // 初期HP(最大HP)
-    private const float InvicibleTime = 2.0f;   // 被ダメージ直後の無敵時間(秒)
-    private const float StuckTime = 0.5f;       // 被ダメージ直後の硬直時間(秒)
-    private const float KnockBack_X = 2.5f;     // 被ダメージ時ノックバック力(x方向)
-    private const float WaterModeDecelerate_X = 0.8f;// 水中でのX方向速度倍率
-    private const float WaterModeDecelerate_Y = 0.92f;// 水中でのY方向速度倍率
-=======
     private const int InitialHP = 20;           // 初期HP(最大HP)
     private const float InvicibleTime = 2.0f;   // 被ダメージ直後の無敵時間(秒)
     private const float StuckTime = 0.5f;       // 被ダメージ直後の硬直時間(秒)
     private const float KnockBack_X = 2.5f;     // 被ダメージ時ノックバック力(x方向)
->>>>>>> parent of dca8166 (コミット＜＞)
+    private const float WaterModeDecelerate_X = 0.8f;// 水中でのX方向速度倍率
+    private const float WaterModeDecelerate_Y = 0.92f;// 水中でのX方向速度倍率
 
     // Start（オブジェクト有効化時に1度実行）
     void Start()
@@ -116,7 +112,7 @@ public class ActorController : MonoBehaviour
                 rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, 0.0f);
             }
             // 坂道に立っている時滑り落ちないようにする処理
-            if (Mathf.Abs(xSpeed) < 0.1f)
+            if (Mathf.Abs(xSpeed) < 0.1f && !icyGroundMode)
             {
                 // Rigidbodyの機能のうち移動と回転を停止
                 rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
@@ -126,6 +122,7 @@ public class ActorController : MonoBehaviour
         // カメラに自身の座標を渡す
         cameraController.SetPosition(transform.position);
     }
+
 
     #region 移動関連
     /// <summary>
@@ -226,7 +223,6 @@ public class ActorController : MonoBehaviour
         rigidbody2D.linearVelocity = velocity;
     }
 
-<<<<<<< HEAD
     /// <summary>
     /// 水中モードをセットする
     /// </summary>
@@ -247,8 +243,7 @@ public class ActorController : MonoBehaviour
     }
     #endregion
 
-=======
->>>>>>> parent of dca8166 (コミット＜＞)
+
     #region 戦闘関連
     /// <summary>
     /// ダメージを受ける際に呼び出される
@@ -339,113 +334,6 @@ public class ActorController : MonoBehaviour
             bulletAngle,// 角度
             1,          // ダメージ量
             5.0f);      // 存在時間
-<<<<<<< HEAD
-=======
-    }
-    #endregion
-
-    #region 特殊武器関連
-    ///summaly
-    ///射撃アクション:タックル
-    ///summaly
-    private void ShotAction_Tackle()
-    {
-        // 弾の方向を取得
-        float bulletAngle = 0.0f; // 右向き
-                                  // アクターが左向きなら弾も左向きに進む
-        if (!rightFacing)
-            bulletAngle = 180.0f;
-
-        // 弾丸オブジェクト生成・設定
-        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Tackle], transform.position, Quaternion.identity);
-        obj.GetComponent<ActorNormalShot>().Init(
-            20.0f, // 速度
-            bulletAngle, // 角度
-            1, // ダメージ量
-            0.3f, // 存在時間
-            nowWeapon); // 使用武器
-        if (!rightFacing)
-            obj.GetComponent<SpriteRenderer>().flipX = true;
-
-        // 主人公の突進移動
-        Vector3 moveVector = new Vector3(1.2f, 0.25f, 0.0f);
-        if (!rightFacing)
-            moveVector.x *= -1.0f;
-        rigidbody2D.MovePosition(transform.position + moveVector);
-        groundSensor.isGround = false;
-
-        // 無敵時間発生
-        invincibleTime = 0.6f;
-    }
-    ///<summary>
-    ///射撃アクション:雪玉
-    ///</summary>
-    private void ShotAction_IceBall()
-    {
-        //弾の初速ベクトル設定
-        Vector2 velocity = new Vector2(14.0f, 8.0f);
-        if (!rightFacing)
-            velocity.x *= -1.0f;
-
-        //弾丸オブジェクト生成・設定
-        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.IceBall], transform.position, Quaternion.identity);
-            obj.GetComponent<ActorNormalShot>().Init(
-                0.0f, //速度(rigidbodyで弾を動かすので設定不要)
-                0.0f, //角度(rigidbodyで球を動かすので設定不要)
-                1, //ダメージ量
-                5.0f, //存在時間
-                newWeapon); //使用武器
-        obj.GetComponent<Rigidbody2D> ().velocity += velocity;
-    }
-
-    ///<summary>
-    ///射撃アクション:稲妻
-    ///</summary>
-    private void ShotAction_Lightning()
-    {
-        //弾の発射位置を設定（主人公の右上or左上）
-        Vector3 fixPos = new Vector3(4.0f, 5.0f, 0.0f);
-        if (!rightFacing)
-            fixPos.x *= -1.0f;
-
-        //弾丸オブジェクト生成・設定
-        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Lightning], transform.position + fixPos, Quaternion.identity);
-        obj.GetComponent<ActorNormalShot>().Init(
-            14.0f, //速度
-            270, //角度
-            2, //ダメージ量
-            5.0f, //存在時間
-            nowWeapon); //使用武器
-    }
-    ///<summary>
-    ///射撃アクション:水の輪
-    ///</summary>
-    private void ShotAction_WaterRing ()
-    {
-        //弾丸オブジェクト生成・設定
-        int bulletNum_Angle = 8; //発射方向数
-        for (int i = 0; i < bulletNum_Angle; i++)
-        {
-            GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.WaterRing], transform.position, Quaternion.identity);
-            obj.GetComponent<ActorNormalShot>().Init(
-                3.0f, //速度
-                (360 / bulletNum_Angle) * i, //角度
-                1, //ダメージ量
-                2.0f, //存在時間
-                nowWeapon); //使用武器
-        }
-    }
-    ///<summary>
-    ///射撃アクションレーザー
-    ///</summary>
-    private void ShotAction_Laser ()
-    {
-        ///レーザーオブジェクト生成・設定
-        GameObject obj = Instantiate(weaponBulletPrefabs[(int)ActorWeaponType.Laser], transform.position, Quaternion.identity);
-        obj.GetComponent<ActorLaser>().Init(
-            1, //ダメージ量
-            1.0f); //存在時間
->>>>>>> parent of dca8166 (コミット＜＞)
     }
     #endregion
 }
