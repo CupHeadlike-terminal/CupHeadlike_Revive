@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\terminal\\CupHeadlike_Revive\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike_revive\\assets\\scripts\\stagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stagemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike_revive\\assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\actor\\actorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike_revive\\assets\\scripts\\actor\\actorsprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\actor\\actorsprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|c:\\terminal\\cupheadlike_revive\\assets\\scripts\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00BB16AA-B7C7-72A4-5F87-E8F478704DF8}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StageManager.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StageManager.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StageManager.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFcAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T14:26:56.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActorSprite.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorSprite.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorSprite.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorSprite.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorSprite.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAEgAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T14:10:36.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ActorController.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorController.cs",
+              "ViewState": "AgIAACUBAAAAAAAAAAAAAGUBAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T13:51:06.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T13:46:29.922Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

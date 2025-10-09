@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
-
 /// <summary>
 /// ステージマネージャクラス
 /// </summary>
@@ -20,6 +20,11 @@ public class StageManager : MonoBehaviour
 
     // ステージ内の全エリアの配列(Startで取得)
     private AreaManager[] inStageAreas;
+
+    // 復活ボタンのGameObject
+    public GameObject revivalButtonObject;
+    // ゲームオーバー時Tween
+    private Tween gameOverTween;
 
     // Start
     void Start()
@@ -38,6 +43,9 @@ public class StageManager : MonoBehaviour
 
         // UI初期化
         bossHPGage.transform.parent.gameObject.SetActive(false);
+
+        // 復活ボタン非表示
+        revivalButtonObject.SetActive(false);
     }
 
     /// <summary>
@@ -72,6 +80,34 @@ public class StageManager : MonoBehaviour
     /// </summary>
     public void GameOver()
     {
-        // ゲームオーバー処理
+        // 復活ボタン表示
+        revivalButtonObject.SetActive(true);
+
+        // 指定秒数経過後に処理を実行
+        gameOverTween = DOVirtual.DelayedCall(
+            30.0f,   // 秒遅延
+            () => {
+                // シーン切り替え
+                SceneManager.LoadScene(0);
+            }
+        );
+    }
+    /// <summary>
+	/// 「広告を見て復活」ボタン押下時処理
+	/// </summary>
+	public void OnRevivalButtonPressed()
+    {
+        // 復活ボタン非表示
+        revivalButtonObject.SetActive(false);
+
+        // ゲームオーバー処理を停止
+        if (gameOverTween != null)
+        {
+            gameOverTween.Kill();
+            gameOverTween = null;
+        }
+
+        // アクターを復活させる
+        actorController.RevivalActor();
     }
 }

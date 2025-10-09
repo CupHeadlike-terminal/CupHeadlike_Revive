@@ -335,5 +335,27 @@ public class ActorController : MonoBehaviour
             1,          // ダメージ量
             5.0f);      // 存在時間
     }
+    /// <summary>
+	/// アクターをその場で復活させる
+	/// </summary>
+	public void RevivalActor()
+    {
+        // HP回復
+        nowHP = maxHP;
+        // HPゲージの表示を更新する
+        float hpRatio = (float)nowHP / maxHP;
+        hpGage.DOFillAmount(hpRatio, 0.5f);
+
+        // 無敵時間発生
+        invincibleTime = InvicibleTime;
+        if (invincibleTime > 0.0f)
+            actorSprite.StartBlinking(); // 点滅開始
+
+        // 被撃破時に変えた部分を戻す
+        isDefeat = false;
+        rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        // 被撃破演出開始
+        actorSprite.StopDefeatAnim();
+    }
     #endregion
 }

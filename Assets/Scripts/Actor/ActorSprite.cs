@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,15 +11,19 @@ public class ActorSprite : MonoBehaviour
 {
     private ActorController actorController; // アクター制御クラス
     private SpriteRenderer spriteRenderer; // アクターのSpriteRenderer
+    public GameObject defeatParticlePrefab = null; // 被撃破パーティクルPrefab
 
     // 画像素材参照
     public List<Sprite> walkAnimationRes; // 歩行アニメーション(装備別*コマ数)
     public List<Sprite> stuckSpriteRes; // スタンスプライト(装備別)
+    public List<Sprite> swimAnimationRes; // 水泳アニメーション(コマ数)
+    public Sprite doggySpriteRes; // 犬騎乗スプライト
 
     // 各種変数
     private float walkAnimationTime; // 歩行アニメーション経過時間
     private int walkAnimationFrame; // 歩行アニメーションの現在のコマ番号
     private Tween blinkTween;   // 点滅処理Tween
+    private Tween defeatTween;  // 被撃破Tween
     public bool stuckMode;      // スタン画像表示モード
 
     // 定数定義
@@ -40,10 +45,11 @@ public class ActorSprite : MonoBehaviour
         if (actorController.isDefeat)
             return;
 
+       
         // スタン画像表示モード中ならスタン画像を表示
         if (stuckMode)
         {
-            spriteRenderer.sprite = stuckSpriteRes[0];
+            spriteRenderer.sprite = stuckSpriteRes[0];//後で差し替える[(int)actorController.nowWeapon];
             return;
         }
 
@@ -62,8 +68,14 @@ public class ActorSprite : MonoBehaviour
         }
 
         // 歩行アニメーション更新
-        spriteRenderer.sprite =
-            walkAnimationRes[walkAnimationFrame];
+        if (!actorController.inWaterMode)
+        {// 地上
+            spriteRenderer.sprite = walkAnimationRes[walkAnimationFrame];//後で差し替える[(int)actorController.nowWeapon * WalkAnimationNum + walkAnimationFrame];
+        }
+        else
+        {// 水中
+            spriteRenderer.sprite = swimAnimationRes[walkAnimationFrame];
+        }
     }
 
     /// <summary>
@@ -82,13 +94,28 @@ public class ActorSprite : MonoBehaviour
     /// </summary>
     public void StartDefeatAnim()
     {
+        // 被撃破パーティクルを生成
+        var obj = Instantiate(defeatParticlePrefab);
+        obj.transform.position = transform.position;
         // 被撃破スプライト表示
         spriteRenderer.sprite = stuckSpriteRes[0];
         // 点滅演出終了
         if (blinkTween != null)
             blinkTween.Kill();
         // スプライト非表示化アニメーション(DOTween)
-        spriteRenderer.DOFade(0.0f, 2.0f); // 2.0秒かけてスプライトの非透明度を0.0fにする
+        defeatTween = spriteRenderer.DOFade(0.0f, 2.0f); // 2.0秒かけてスプライトの非透明度を0.0fにする
+    }
+    /// <summary>
+    /// 被撃破演出終了
+    /// </summary>
+    public void StopDefeatAnim()
+    {
+        // 被撃破Tween終了
+        if (defeatTween != null)
+            defeatTween.Kill();
+        defeatTween = null;
+        // 表示色を戻す
+        spriteRenderer.color = Color.white;
     }
     /// <summary>
     /// 点滅終了処理

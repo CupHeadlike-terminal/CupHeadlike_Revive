@@ -418,6 +418,7 @@ MonoBehaviour:
   cameraController: {fileID: 3728521472089773913}
   weaponBulletPrefab: {fileID: 4582202570429077837, guid: 5a557a44aa7a5bc409fff2181d981018, type: 3}
   hpGage: {fileID: 5986194210127714665}
+  icyGroundMode: 0
   nowHP: 0
   maxHP: 0
   xSpeed: 0
@@ -436,12 +437,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772b223e5e92e4448929be0761176011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defeatParticlePrefab: {fileID: 0}
   walkAnimationRes:
   - {fileID: 21300000, guid: 63dbbd557c45a40408525bf39bb0350d, type: 3}
   - {fileID: 21300000, guid: a688d0fd26478d84bb4fb4fde9772392, type: 3}
   - {fileID: 21300000, guid: 19605ede13c73284f96daa66e8b3273d, type: 3}
   stuckSpriteRes:
   - {fileID: 21300000, guid: 3cc816b2057d7db45935ae5cf60e22e6, type: 3}
+  swimAnimationRes: []
+  doggySpriteRes: {fileID: 0}
   stuckMode: 0
 --- !u!1 &361856822026384958
 GameObject:
@@ -1525,6 +1529,7 @@ MonoBehaviour:
   bossHPGage: {fileID: 8279665084537882091}
   initArea: {fileID: 0}
   bossBGMClip: {fileID: 8300000, guid: 961407a35ced8f24ea32c20b0dbaa487, type: 3}
+  revivalButtonObject: {fileID: 8534064133567515198}
 --- !u!82 &8078882172535088610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1908,7 +1913,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6142833126446722159}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4809279706567926361}
+        m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
+        m_MethodName: OnRevivalButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8636211669543446406
 GameObject:
   m_ObjectHideFlags: 0
