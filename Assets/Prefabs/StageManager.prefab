@@ -437,7 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 772b223e5e92e4448929be0761176011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defeatParticlePrefab: {fileID: 0}
+  defeatParticlePrefab: {fileID: 5275496971692960708, guid: 020d2bbe6feb05a43bdeedefada35b1f, type: 3}
   walkAnimationRes:
   - {fileID: 21300000, guid: 63dbbd557c45a40408525bf39bb0350d, type: 3}
   - {fileID: 21300000, guid: a688d0fd26478d84bb4fb4fde9772392, type: 3}
@@ -846,7 +846,7 @@ Canvas:
   m_GameObject: {fileID: 1405903639232036157}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 7236621218479804110}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
