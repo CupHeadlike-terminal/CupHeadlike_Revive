@@ -55,7 +55,6 @@
     <UnityVersion>6000.0.50f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.50f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.50f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.50f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -67,11 +66,13 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy_Wolf.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_JumpBlock.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Frog.cs" />
+    <Compile Include="Assets\Scripts\Actor\ActorWindblowShot.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorSprite.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_HiddenWall.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Crow.cs" />
     <Compile Include="Assets\Scripts\StageManager.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorGroundSensor.cs" />
+    <Compile Include="Assets\Scripts\Actor\ActorLaser.cs" />
     <Compile Include="Assets\Scripts\AreaManager.cs" />
     <Compile Include="Assets\Scripts\Data.cs" />
     <Compile Include="Assets\Scripts\ScrollEnter.cs" />

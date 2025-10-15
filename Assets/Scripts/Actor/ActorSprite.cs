@@ -49,7 +49,11 @@ public class ActorSprite : MonoBehaviour
         // スタン画像表示モード中ならスタン画像を表示
         if (stuckMode)
         {
-            spriteRenderer.sprite = stuckSpriteRes[0];//後で差し替える[(int)actorController.nowWeapon];
+            if (stuckSpriteRes != null && stuckSpriteRes.Count > 0)
+            {
+                int stuckIndex = Mathf.Clamp((int)actorController.nowWeapon, 0, stuckSpriteRes.Count - 1);
+                spriteRenderer.sprite = stuckSpriteRes[stuckIndex];
+            }
             return;
         }
 
@@ -70,11 +74,14 @@ public class ActorSprite : MonoBehaviour
         // 歩行アニメーション更新
         if (!actorController.inWaterMode)
         {// 地上
-            spriteRenderer.sprite = walkAnimationRes[walkAnimationFrame];//後で差し替える[(int)actorController.nowWeapon * WalkAnimationNum + walkAnimationFrame];
+            int index = (int)actorController.nowWeapon * WalkAnimationNum + walkAnimationFrame;
+            index = Mathf.Clamp(index, 0, walkAnimationRes.Count - 1);
+            spriteRenderer.sprite = walkAnimationRes[index];
         }
         else
         {// 水中
-            spriteRenderer.sprite = swimAnimationRes[walkAnimationFrame];
+            int swimIndex = Mathf.Clamp(walkAnimationFrame, 0, swimAnimationRes.Count - 1);
+            spriteRenderer.sprite = swimAnimationRes[swimIndex];
         }
     }
 
