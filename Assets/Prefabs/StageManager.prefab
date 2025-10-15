@@ -34294,7 +34294,6 @@ MonoBehaviour:
   icyGroundMode: 0
   weaponBulletPrefabs:
   - {fileID: 4582202570429077837, guid: 5a557a44aa7a5bc409fff2181d981018, type: 3}
-  - {fileID: 0}
   - {fileID: 8140412803008415822, guid: 1c3e68d467ad6ec4ea05c6b61c66f6dc, type: 3}
   - {fileID: 647989055895829732, guid: cc1e7f091d4769f4cb262a2d33304554, type: 3}
   - {fileID: 7500217931469745000, guid: ca4e534503502084caad50a42ba44f53, type: 3}
@@ -34303,7 +34302,6 @@ MonoBehaviour:
   - {fileID: 4835874283839141911, guid: e4c77dd1d0f1f72489031b85096c8605, type: 3}
   weaponIconSprites:
   - {fileID: 21300000, guid: 9add5292d16292f4ab8cc45debb4d5e7, type: 3}
-  - {fileID: 0}
   - {fileID: 21300000, guid: 539de677d25793044866385931da88f3, type: 3}
   - {fileID: 21300000, guid: a2e015fa6be02b448823c6d61446f576, type: 3}
   - {fileID: 21300000, guid: 9fb2055a44ead154881a6de0692c467b, type: 3}
@@ -34318,16 +34316,14 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0.97772026, a: 0}
   - {r: 0.96574056, g: 1, b: 0, a: 0}
   - {r: 0.21170712, g: 0, b: 1, a: 0}
-  - {r: 1, g: 0, b: 0, a: 0}
-  weaponEnergyCosts: 0000000004000000030000000200000003000000020000000300000002000000
+  weaponEnergyCosts: 00000000030000000200000003000000030000000200000002000000
   weaponIntervals:
   - 0.5
   - 0.4
-  - 0.4
   - 0.7
-  - 0.18
-  - 0.4
   - 1.2
+  - 0.18
+  - 0.6
   - 0.6
   nowHP: 0
   maxHP: 0
