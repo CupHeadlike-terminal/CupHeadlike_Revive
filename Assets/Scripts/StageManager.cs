@@ -72,7 +72,26 @@ public class StageManager : MonoBehaviour
     /// </summary>
     public void StageClear()
     {
-        // ステージクリア処理
+        // ステージクリアフラグ記録
+        Data.instance.stageClearedFlags[Data.instance.nowStageID] = true;
+        // 特殊武器解放
+        if (Data.instance.weaponUnlocks.Length > Data.instance.nowStageID + 1)
+        {
+            if (!Data.instance.weaponUnlocks[Data.instance.nowStageID + 1])
+            {
+                Data.instance.weaponUnlocks[Data.instance.nowStageID + 1] = true;
+            }
+        }
+
+        // 指定秒数経過後に処理を実行
+        DOVirtual.DelayedCall(
+            5.0f,   // 5.0秒遅延
+            () =>
+            {
+                // シーン切り替え
+                SceneManager.LoadScene(0);
+            }
+        );
     }
 
     /// <summary>
