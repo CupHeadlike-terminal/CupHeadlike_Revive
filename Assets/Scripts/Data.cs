@@ -34,9 +34,9 @@ public class Data : MonoBehaviour
     public bool[] weaponUnlocks; // 特殊武器の開放データ
 
     // 定数定義
-    public const int StageNum_Normal = 7; // 通常ステージ数 
-    public const int StageNum_All = 8;  // ラスボス面も含めたステージ数
-    public const int LastStageID = 7; // ラスボス面のステージ番号
+    public const int StageNum_Normal = 1; // 通常ステージ数 
+    public const int StageNum_All = 2;  // ラスボス面も含めたステージ数
+    public const int LastStageID = 1; // ラスボス面のステージ番号
 
     /// <summary>
     /// ゲーム開始時(インスタンス生成完了時)に一度だけ実行される処理
@@ -50,7 +50,7 @@ public class Data : MonoBehaviour
         stageClearedFlags = new bool[StageNum_All];
 
         // 特殊武器開放データ初期化
-        //後で追加weaponUnlocks = new bool[(int)ActorController.ActorWeaponType._Max];
+        weaponUnlocks = new bool[(int)ActorController.ActorWeaponType._Max];
         weaponUnlocks[0] = true; // 1個目の初期武器は自動開放
     }
 }
