@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Assets",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Gimmic"
   ],
-  "SelectedNode": "\\CupHeadlike_Revive.sln",
+  "SelectedNode": "\\Assets\\Scripts\\Gimmic\\Gimmic_CircularLift.cs",
   "PreviewInSolutionExplorer": false
 }
