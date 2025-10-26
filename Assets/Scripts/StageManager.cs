@@ -25,6 +25,30 @@ public class StageManager : MonoBehaviour
     public GameObject revivalButtonObject;
     // ゲームオーバー時Tween
     private Tween gameOverTween;
+    private bool[] weaponUnlocked;
+    // ステージIDに対応する武器ID（-1なら解放なし）
+    private int[] stageToWeaponMap = { -1, 1, 2, 3, 4, 5, 6 };
+
+    void Awake()
+    {
+        weaponUnlocked = new bool[(int)ActorController.ActorWeaponType._Max];
+
+        // 通常武器は最初から解放
+        weaponUnlocked[0] = true;
+
+        // Data.instance からシーン間情報を読み込む
+        for (int i = 0; i < Data.instance.weaponUnlocks.Length; i++)
+        {
+            if (Data.instance.weaponUnlocks[i])
+                weaponUnlocked[i] = true;
+        }
+    }
+
+    public bool IsWeaponUnlocked(int weaponID)
+    {
+        if (weaponID < 0 || weaponID >= weaponUnlocked.Length) return false;
+        return weaponUnlocked[weaponID];
+    }
 
     // Start
     void Start()
@@ -74,24 +98,27 @@ public class StageManager : MonoBehaviour
     {
         // ステージクリアフラグ記録
         Data.instance.stageClearedFlags[Data.instance.nowStageID] = true;
-        // 特殊武器解放
-        if (Data.instance.weaponUnlocks.Length > Data.instance.nowStageID + 1)
+
+        // 特殊武器解放（存在する場合のみ）
+        int unlockWeaponID = GetWeaponIDForStage(Data.instance.nowStageID);
+        if (unlockWeaponID >= 0 && unlockWeaponID < Data.instance.weaponUnlocks.Length)
         {
-            if (!Data.instance.weaponUnlocks[Data.instance.nowStageID + 1])
+            if (!Data.instance.weaponUnlocks[unlockWeaponID])
             {
-                Data.instance.weaponUnlocks[Data.instance.nowStageID + 1] = true;
+                Data.instance.weaponUnlocks[unlockWeaponID] = true;
+                Debug.Log("特殊武器ID " + unlockWeaponID + " を入手しました！");
             }
         }
 
-        // 指定秒数経過後に処理を実行
-        DOVirtual.DelayedCall(
-            5.0f,   // 5.0秒遅延
-            () =>
-            {
-                // シーン切り替え
-                SceneManager.LoadScene(0);
-            }
-        );
+        // シーン切り替えは遅延呼び出し
+        DOVirtual.DelayedCall(5.0f, () => { SceneManager.LoadScene(0); });
+    }
+
+    // ステージIDに対応する武器IDを返す関数（存在しない場合 -1 を返す）
+    private int GetWeaponIDForStage(int stageID)
+    {
+        if (stageID < 0 || stageID >= stageToWeaponMap.Length) return -1;
+        return stageToWeaponMap[stageID];
     }
 
     /// <summary>
@@ -128,5 +155,15 @@ public class StageManager : MonoBehaviour
 
         // アクターを復活させる
         actorController.RevivalActor();
+    }
+    public void UnlockWeapon(int weaponID)
+    {
+        if (weaponID < 0 || weaponID >= weaponUnlocked.Length) return;
+
+        weaponUnlocked[weaponID] = true;
+        if (weaponID < Data.instance.weaponUnlocks.Length)
+            Data.instance.weaponUnlocks[weaponID] = true;
+
+        Debug.Log("武器ID " + weaponID + " が解放されました");
     }
 }

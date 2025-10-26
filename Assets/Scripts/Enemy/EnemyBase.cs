@@ -159,6 +159,13 @@ public class EnemyBase : MonoBehaviour
     /// </summary>
     private void Vanish()
     {
+        // WeaponDrop を確認
+        WeaponDrop drop = GetComponentInChildren<WeaponDrop>();
+        if (drop != null)
+        {
+            areaManager.stageManager.UnlockWeapon(drop.weaponID);
+            Debug.Log("武器ID " + drop.weaponID + " を解放しました");
+        }
         // オブジェクト消滅
         Destroy(gameObject);
     }
@@ -201,5 +208,17 @@ public class EnemyBase : MonoBehaviour
             // 右向きフラグon
             rightFacing = true;
         }
+    }
+    protected virtual void OnDefeated()
+    {
+        // 子に WeaponDrop があれば特殊武器解放
+        WeaponDrop drop = GetComponentInChildren<WeaponDrop>();
+        if (drop != null)
+        {
+            areaManager.stageManager.UnlockWeapon(drop.weaponID);
+        }
+
+        // 自身を削除
+        Destroy(gameObject);
     }
 }
