@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy_Wolf.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_JumpBlock.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Frog.cs" />
+    <Compile Include="Assets\Scripts\Gimmic\Gimmic_CircularLift.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorWindblowShot.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorSprite.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_HiddenWall.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\Scripts\Actor\ActorController.cs" />
     <Compile Include="Assets\Scripts\StageSelectManager.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_DamageBlock.cs" />
+    <Compile Include="Assets\Scripts\Gimmic\Gimmic_Lift.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBodyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
