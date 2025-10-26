@@ -293,21 +293,24 @@ public class ActorController : MonoBehaviour
     /// </summary>
     private void ChangeWeaponUpdate()
     {
-        // 武器切り替え
-        if (Input.GetKeyDown(KeyCode.A))
-        {// 1つ前に切り替え
-            if (nowWeapon == ActorWeaponType.Normal)
-                nowWeapon = ActorWeaponType._Max;
-            nowWeapon--;
-            // 武器変更を反映
+        StageManager sm = GetComponentInParent<StageManager>();
+
+        if (Input.GetKeyDown(KeyCode.A)) // 前の武器
+        {
+            do
+            {
+                nowWeapon--;
+                if (nowWeapon < 0) nowWeapon = ActorWeaponType._Max - 1;
+            } while (!sm.IsWeaponUnlocked((int)nowWeapon));
             ApplyWeaponChange();
         }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {// 1つ次に切り替え
-            nowWeapon++;
-            if (nowWeapon == ActorWeaponType._Max)
-                nowWeapon = ActorWeaponType.Normal;
-            // 武器変更を反映
+        else if (Input.GetKeyDown(KeyCode.S)) // 次の武器
+        {
+            do
+            {
+                nowWeapon++;
+                if (nowWeapon >= ActorWeaponType._Max) nowWeapon = ActorWeaponType.Normal;
+            } while (!sm.IsWeaponUnlocked((int)nowWeapon));
             ApplyWeaponChange();
         }
     }
