@@ -7,6 +7,6 @@
     "\\Assets\\Scripts\\Enemy",
     "\\Assets\\Scripts\\Gimmic"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\StageSelectManager.cs",
+  "SelectedNode": "\\Assets\\Scripts\\Enemy\\Enemy_Lion.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -285,13 +285,13 @@ public class ActorController : MonoBehaviour
             rigidbody2D.gravityScale = 1.0f;
         }
     }
-    #endregion
+        #endregion
 
-    #region 装備関連
-    /// <summary>
-    /// Updateから呼び出される武器切り替え処理
-    /// </summary>
-    private void ChangeWeaponUpdate()
+        #region 装備関連
+        /// <summary>
+        /// Updateから呼び出される武器切り替え処理
+        /// </summary>
+        private void ChangeWeaponUpdate()
     {
         StageManager sm = GetComponentInParent<StageManager>();
 
