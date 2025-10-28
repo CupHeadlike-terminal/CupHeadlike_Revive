@@ -23,6 +23,7 @@ public class StageManager : MonoBehaviour
 
     // 復活ボタンのGameObject
     public GameObject revivalButtonObject;
+    public GameObject NewWeaponObject;
     // ゲームオーバー時Tween
     private Tween gameOverTween;
     private bool[] weaponUnlocked;
@@ -70,6 +71,7 @@ public class StageManager : MonoBehaviour
 
         // 復活ボタン非表示
         revivalButtonObject.SetActive(false);
+        NewWeaponObject.SetActive(false);
     }
 
     /// <summary>
@@ -163,6 +165,16 @@ public class StageManager : MonoBehaviour
         weaponUnlocked[weaponID] = true;
         if (weaponID < Data.instance.weaponUnlocks.Length)
             Data.instance.weaponUnlocks[weaponID] = true;
+        if (Data.instance.weaponUnlocks[weaponID])
+
+            NewWeaponObject.SetActive(true);
+        gameOverTween = DOVirtual.DelayedCall(
+            3.0f,   // 秒遅延
+            () => {
+                // UI非表示
+                NewWeaponObject.SetActive(false);
+            }
+        );
 
         Debug.Log("武器ID " + weaponID + " が解放されました");
     }
