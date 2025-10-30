@@ -13,6 +13,7 @@ public class ActorWindblowShot : ActorNormalShot
     /// </summary>
     protected override void OnDamagedEnemy(EnemyBase enemyBase)
     {
+        enemyBase.Damaged(damage);
         Vector2 blowVector = new Vector2(10.0f, 7.0f);
         // �e�����ɐi��ł���Ȃ�x�N�g�������E���]
         if (angle > 90)
