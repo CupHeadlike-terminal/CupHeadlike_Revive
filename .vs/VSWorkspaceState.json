@@ -3,8 +3,10 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Actor",
+    "\\Assets\\Scripts\\Enemy",
     "\\Assets\\Scripts\\Gimmic"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\Gimmic\\Gimmic_CircularLift.cs",
+  "SelectedNode": "\\Assets\\Scripts\\WeaponGetAnimation.cs",
   "PreviewInSolutionExplorer": false
 }

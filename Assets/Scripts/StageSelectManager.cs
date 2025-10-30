@@ -11,10 +11,15 @@ public class StageSelectManager : MonoBehaviour
 {
     // ステージ選択ボタンリスト
     [SerializeField] private List<Image> stageSelectButtonImages = null;
+    // タイトルImageオブジェクト
+    [SerializeField] private GameObject titlePictureObject = null;
 
     // Start
     void Start()
     {
+        // タイトル画面タップ済みフラグが有効ならタイトル画面を表示しない
+        if (Data.instance.isTitleDisplayed)
+            titlePictureObject.SetActive(false);
         // ステージセレクトボタンの色変更
         for (int i = 0; i < stageSelectButtonImages.Count; i++)
         {
@@ -45,5 +50,16 @@ public class StageSelectManager : MonoBehaviour
         Data.instance.nowStageID = bossID;
         // シーン切り替え
         SceneManager.LoadScene(bossID + 1);
+    }
+
+    /// <summary>
+    /// タイトル画像オブジェクトタップ時に呼び出し
+    /// </summary>
+    public void OnTitlePictureTapped()
+    {
+        // タイトル画像オブジェクトを無効化
+        titlePictureObject.SetActive(false);
+        // タイトル画面タップ済みフラグをセット
+        Data.instance.isTitleDisplayed = true;
     }
 }

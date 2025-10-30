@@ -53,6 +53,7 @@ public class ActorController : MonoBehaviour
     private float invincibleTime;   // 残り無敵時間(秒)
     [HideInInspector] public bool isDefeat; // true:撃破された(ゲームオーバー)
     [HideInInspector] public bool inWaterMode; // true:水中モード(メソッドから変更)
+    [HideInInspector] public bool unmovableMode; // 行動禁止モード
 
     // 定数定義
     private const int InitialHP = 20;           // 初期HP(最大HP)
@@ -106,6 +107,10 @@ public class ActorController : MonoBehaviour
     // Update（1フレームごとに1度ずつ実行）
     void Update()
     {
+        // 行動禁止モードなら終了
+        if (unmovableMode)
+            return;
+
         // 撃破された後なら終了
         if (isDefeat)
             return;
@@ -285,13 +290,13 @@ public class ActorController : MonoBehaviour
             rigidbody2D.gravityScale = 1.0f;
         }
     }
-    #endregion
+        #endregion
 
     #region 装備関連
-    /// <summary>
-    /// Updateから呼び出される武器切り替え処理
-    /// </summary>
-    private void ChangeWeaponUpdate()
+        /// <summary>
+        /// Updateから呼び出される武器切り替え処理
+        /// </summary>
+        private void ChangeWeaponUpdate()
     {
         StageManager sm = GetComponentInParent<StageManager>();
 
@@ -413,6 +418,45 @@ public class ActorController : MonoBehaviour
         // 次弾発射可能までの残り時間設定
         weaponRemainInterval = weaponIntervals[(int)nowWeapon];
 
+        // 攻撃を発射
+        switch (nowWeapon)
+        {
+            case ActorWeaponType.Normal:
+                // 通常攻撃
+                ShotAction_Normal();
+                break;
+            case ActorWeaponType.Tackle:
+                // タックル
+                ShotAction_Tackle();
+                break;
+            case ActorWeaponType.Windblow:
+                // 突風
+                ShotAction_Windblow();
+                break;
+            case ActorWeaponType.IceBall:
+                // 雪玉
+                ShotAction_IceBall();
+                break;
+            case ActorWeaponType.Lightning:
+                // 稲妻
+                ShotAction_Lightning();
+                break;
+            case ActorWeaponType.WaterRing:
+                // 水の輪
+                ShotAction_WaterRing();
+                break;
+            case ActorWeaponType.Laser:
+                // レーザー
+                ShotAction_Laser();
+                break;
+        }
+    }
+
+    /// <summary>
+	/// 攻撃ボタン入力時処理(強制呼び出し用)
+	/// </summary>
+	public void StartShotActionImmediately()
+    {
         // 攻撃を発射
         switch (nowWeapon)
         {

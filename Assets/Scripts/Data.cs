@@ -29,6 +29,7 @@ public class Data : MonoBehaviour
     #endregion
 
     // シーン間で保持するデータデータ
+    public bool isTitleDisplayed; // タイトル画面タップ済み
     public bool[] stageClearedFlags; // ステージ別クリアフラグ
     public int nowStageID; // 現在攻略中のステージID
     public bool[] weaponUnlocks; // 特殊武器の開放データ

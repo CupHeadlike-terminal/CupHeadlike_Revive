@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\",
+  "WorkspaceRootPath": "C:\\terminal\\CupHeadlike_Revive\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,12 +22,29 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorSprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorSprite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\StageManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\AreaManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\AreaManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\WeaponDrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemy\\WeaponDrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Enemy\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\StageSelectManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\StageSelectManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -36,14 +54,17 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorNormalShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorNormalShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorNormalShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorLaser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Actor\\ActorWindblowShot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -54,6 +75,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 5,
           "Children": [
             {
@@ -92,21 +114,43 @@
               "ViewState": "AgIAABcAAAAAAAAAAAAQwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-10T08:13:03.121Z"
+=======
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Data.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T13:46:29.922Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "StageManager.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StageManager.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\StageManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\StageManager.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAAF8AAAAAAAAAAAAAwGwAAABBAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABkAAAAmAAAAAAAAAA==",
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T14:26:56.318Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 4,
               "Title": "ActorSprite.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorSprite.cs",
@@ -120,18 +164,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+=======
+              "DocumentIndex": 1,
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
               "Title": "ActorController.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorController.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorController.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorController.cs",
+<<<<<<< HEAD
               "ViewState": "AgIAADkAAAAAAAAAAAAAAF8CAAARAAAAAAAAAA==",
+=======
+              "ViewState": "AgIAAMYBAAAAAAAAAAAAANEBAAAWAAAAAAAAAA==",
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-09T13:51:06.195Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 3,
               "Title": "Data.cs",
               "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Data.cs",
@@ -169,10 +221,50 @@
             {
               "$type": "Document",
               "DocumentIndex": 10,
+=======
+              "DocumentIndex": 2,
+              "Title": "WeaponDrop.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\WeaponDrop.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\WeaponDrop.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\WeaponDrop.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\WeaponDrop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T09:06:36.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EnemyBase.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enemy\\EnemyBase.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAKYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T09:31:00.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ActorNormalShot.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorNormalShot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorNormalShot.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorNormalShot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorNormalShot.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAQwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T00:39:06.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
               "Title": "ActorWindblowShot.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorWindblowShot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -180,11 +272,15 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
+=======
+              "DocumentIndex": 6,
+>>>>>>> b34e42cdc30e40c2f1424aa9ebf0af306f393765
               "Title": "ActorLaser.cs",
-              "DocumentMoniker": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs",
+              "DocumentMoniker": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Actor\\ActorLaser.cs",
-              "ToolTip": "C:\\Users\\kenshinu\\Desktop\\rere\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs",
+              "ToolTip": "C:\\terminal\\CupHeadlike_Revive\\Assets\\Scripts\\Actor\\ActorLaser.cs",
               "RelativeToolTip": "Assets\\Scripts\\Actor\\ActorLaser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
