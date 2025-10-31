@@ -510,6 +510,8 @@ public class ActorController : MonoBehaviour
             1,          // ダメージ量
             5.0f,      // 存在時間
             nowWeapon); // 現在装備中の武器を渡す
+        // SE再生                
+        SEPlayer.instance.PlaySE(SEPlayer.SEName.Normal_Shot);
     }
     /// <summary>
 	/// アクターをその場で復活させる

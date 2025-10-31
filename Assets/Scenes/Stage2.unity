@@ -6054,6 +6054,10 @@ PrefabInstance:
       propertyPath: m_DrawMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1919298483875923656, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2888980067591149783, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_Size.x
       value: 248
@@ -8722,6 +8726,22 @@ PrefabInstance:
       propertyPath: backGroundTransform
       value: 
       objectReference: {fileID: 851652858}
+    - target: {fileID: 4041292491108622371, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_Color.b
+      value: 0.09691062
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041292491108622371, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8805031
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041292491108622371, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8717965
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041292491108622371, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4405417598133152103, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: 'weaponIntervals.Array.data[0]'
       value: 0.2
@@ -43722,6 +43742,10 @@ PrefabInstance:
     - target: {fileID: 550833543299230667, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
       propertyPath: m_Name
       value: Enemy_Lion
+      objectReference: {fileID: 0}
+    - target: {fileID: 931112717566671566, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
+      propertyPath: maxHP
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4475161570853606109, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
       propertyPath: m_LocalPosition.x

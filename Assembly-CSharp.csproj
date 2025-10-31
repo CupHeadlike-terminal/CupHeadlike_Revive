@@ -72,11 +72,13 @@
     <Compile Include="Assets\Scripts\Actor\ActorWindblowShot.cs" />
     <Compile Include="Assets\Scripts\SEPlayer.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorSprite.cs" />
+    <Compile Include="Assets\Scripts\ButtomKey.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_HiddenWall.cs" />
     <Compile Include="Assets\Scripts\Gimmic\Gimmic_Tereport.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Crow.cs" />
     <Compile Include="Assets\Scripts\StageManager.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorGroundSensor.cs" />
+    <Compile Include="Assets\Scripts\Buttom2.cs" />
     <Compile Include="Assets\Scripts\WeaponGetAnimation.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorLaser.cs" />
     <Compile Include="Assets\Scripts\AreaManager.cs" />
