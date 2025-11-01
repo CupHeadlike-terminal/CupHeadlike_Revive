@@ -1,43 +1,45 @@
+ï»¿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using DG.Tweening;
+
 /// <summary>
-/// ƒXƒe[ƒWƒ}ƒl[ƒWƒƒƒNƒ‰ƒX
+/// ã‚¹ãƒ†ãƒ¼ã‚¸ãƒãƒãƒ¼ã‚¸ãƒ£ã‚¯ãƒ©ã‚¹
 /// </summary>
 public class StageManager : MonoBehaviour
 {
-    [HideInInspector] public ActorController actorController; // ƒAƒNƒ^[§ŒäƒNƒ‰ƒX
-    [HideInInspector] public CameraController cameraController; // ƒJƒƒ‰§ŒäƒNƒ‰ƒX
-    public Image bossHPGage; // ƒ{ƒX—pHPƒQ[ƒWImage
+    [HideInInspector] public ActorController actorController; // ã‚¢ã‚¯ã‚¿ãƒ¼åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
+    [HideInInspector] public CameraController cameraController; // ã‚«ãƒ¡ãƒ©åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
+    public Image bossHPGage; // ãƒœã‚¹ç”¨HPã‚²ãƒ¼ã‚¸Image
 
-    [Header("‰ŠúƒGƒŠƒA‚ÌAreaManager")]
-    public AreaManager initArea; // ƒXƒe[ƒW“à‚ÌÅ‰‚ÌƒGƒŠƒA(‰ŠúƒGƒŠƒA)
-    [Header("ƒ{ƒXí—pBGM‚ÌAudioClip")]
+    [Header("åˆæœŸã‚¨ãƒªã‚¢ã®AreaManager")]
+    public AreaManager initArea; // ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®æœ€åˆã®ã‚¨ãƒªã‚¢(åˆæœŸã‚¨ãƒªã‚¢)
+    [Header("ãƒœã‚¹æˆ¦ç”¨BGMã®AudioClip")]
     public AudioClip bossBGMClip;
 
-    // ƒXƒe[ƒW“à‚Ì‘SƒGƒŠƒA‚Ì”z—ñ(Start‚Åæ“¾)
+    // ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®å…¨ã‚¨ãƒªã‚¢ã®é…åˆ—(Startã§å–å¾—)
     private AreaManager[] inStageAreas;
 
-    // •œŠˆƒ{ƒ^ƒ“‚ÌGameObject
+    // å¾©æ´»ãƒœã‚¿ãƒ³ã®GameObject
     public GameObject revivalButtonObject;
     public GameObject NewWeaponObject;
-    // ƒQ[ƒ€ƒI[ƒo[Tween
+    public GameObject CrearObject;
+    // ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼æ™‚Tween
     private Tween gameOverTween;
     private bool[] weaponUnlocked;
-    // ƒXƒe[ƒWID‚É‘Î‰‚·‚é•ŠíIDi-1‚È‚ç‰ğ•ú‚È‚µj
+    // ã‚¹ãƒ†ãƒ¼ã‚¸IDã«å¯¾å¿œã™ã‚‹æ­¦å™¨IDï¼ˆ-1ãªã‚‰è§£æ”¾ãªã—ï¼‰
     private int[] stageToWeaponMap = { -1, 1, 2, 3, 4, 5, 6 };
 
     void Awake()
     {
         weaponUnlocked = new bool[(int)ActorController.ActorWeaponType._Max];
 
-        // ’Êí•Ší‚ÍÅ‰‚©‚ç‰ğ•ú
+        // é€šå¸¸æ­¦å™¨ã¯æœ€åˆã‹ã‚‰è§£æ”¾
         weaponUnlocked[0] = true;
 
-        // Data.instance ‚©‚çƒV[ƒ“ŠÔî•ñ‚ğ“Ç‚İ‚Ş
+        // Data.instance ã‹ã‚‰ã‚·ãƒ¼ãƒ³é–“æƒ…å ±ã‚’èª­ã¿è¾¼ã‚€
         for (int i = 0; i < Data.instance.weaponUnlocks.Length; i++)
         {
             if (Data.instance.weaponUnlocks[i])
@@ -54,28 +56,29 @@ public class StageManager : MonoBehaviour
     // Start
     void Start()
     {
-        // QÆæ“¾
+        // å‚ç…§å–å¾—
         actorController = GetComponentInChildren<ActorController>();
         cameraController = GetComponentInChildren<CameraController>();
 
-        // ƒXƒe[ƒW“à‚Ì‘SƒGƒŠƒA‚ğæ“¾E‰Šú‰»
+        // ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®å…¨ã‚¨ãƒªã‚¢ã‚’å–å¾—ãƒ»åˆæœŸåŒ–
         inStageAreas = GetComponentsInChildren<AreaManager>();
         foreach (var targetAreaManager in inStageAreas)
             targetAreaManager.Init(this);
 
-        // ‰ŠúƒGƒŠƒA‚ğƒAƒNƒeƒBƒu‰»(‚»‚Ì‘¼‚ÌƒGƒŠƒA‚Í‘S‚Ä–³Œø‰»)
+        // åˆæœŸã‚¨ãƒªã‚¢ã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–(ãã®ä»–ã®ã‚¨ãƒªã‚¢ã¯å…¨ã¦ç„¡åŠ¹åŒ–)
         initArea.ActiveArea();
 
-        // UI‰Šú‰»
+        // UIåˆæœŸåŒ–
         bossHPGage.transform.parent.gameObject.SetActive(false);
 
-        // •œŠˆƒ{ƒ^ƒ“”ñ•\¦
+        // å¾©æ´»ãƒœã‚¿ãƒ³éè¡¨ç¤º
         revivalButtonObject.SetActive(false);
         NewWeaponObject.SetActive(false);
+        CrearObject.SetActive(false);
     }
 
     /// <summary>
-    /// ƒXƒe[ƒW“à‚Ì‘SƒGƒŠƒA‚ğ–³Œø‰»‚·‚é
+    /// ã‚¹ãƒ†ãƒ¼ã‚¸å†…ã®å…¨ã‚¨ãƒªã‚¢ã‚’ç„¡åŠ¹åŒ–ã™ã‚‹
     /// </summary>
     public void DeactivateAllAreas()
     {
@@ -84,39 +87,48 @@ public class StageManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒ{ƒXí—pBGM‚ğÄ¶‚·‚é
+    /// ãƒœã‚¹æˆ¦ç”¨BGMã‚’å†ç”Ÿã™ã‚‹
     /// </summary>
     public void PlayBossBGM()
     {
-        // BGM‚ğ•ÏX‚·‚é
+        // BGMã‚’å¤‰æ›´ã™ã‚‹
         GetComponent<AudioSource>().clip = bossBGMClip;
         GetComponent<AudioSource>().Play();
     }
 
     /// <summary>
-    /// ƒXƒe[ƒWƒNƒŠƒAˆ—
+    /// ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒªã‚¢æ™‚å‡¦ç†
     /// </summary>
     public void StageClear()
     {
-        // ƒXƒe[ƒWƒNƒŠƒAƒtƒ‰ƒO‹L˜^
+        // ã‚¹ãƒ†ãƒ¼ã‚¸ã‚¯ãƒªã‚¢ãƒ•ãƒ©ã‚°è¨˜éŒ²
         Data.instance.stageClearedFlags[Data.instance.nowStageID] = true;
 
-        // “Áê•Ší‰ğ•úi‘¶İ‚·‚éê‡‚Ì‚İj
+        // ç‰¹æ®Šæ­¦å™¨è§£æ”¾ï¼ˆå­˜åœ¨ã™ã‚‹å ´åˆã®ã¿ï¼‰
         int unlockWeaponID = GetWeaponIDForStage(Data.instance.nowStageID);
         if (unlockWeaponID >= 0 && unlockWeaponID < Data.instance.weaponUnlocks.Length)
         {
             if (!Data.instance.weaponUnlocks[unlockWeaponID])
             {
                 Data.instance.weaponUnlocks[unlockWeaponID] = true;
-                Debug.Log("“Áê•ŠíID " + unlockWeaponID + " ‚ğ“üè‚µ‚Ü‚µ‚½I");
+                Debug.Log("ç‰¹æ®Šæ­¦å™¨ID " + unlockWeaponID + " ã‚’å…¥æ‰‹ã—ã¾ã—ãŸï¼");
             }
         }
 
-        // ƒV[ƒ“Ø‚è‘Ö‚¦‚Í’x‰„ŒÄ‚Ño‚µ
+        CrearObject.SetActive(true);
+        gameOverTween = DOVirtual.DelayedCall(
+            5.0f,   // ç§’é…å»¶
+            () =>
+            {
+                // UIéè¡¨ç¤º
+                CrearObject.SetActive(false);
+            }
+        );
+        // ã‚·ãƒ¼ãƒ³åˆ‡ã‚Šæ›¿ãˆã¯é…å»¶å‘¼ã³å‡ºã—
         DOVirtual.DelayedCall(5.0f, () => { SceneManager.LoadScene(0); });
     }
 
-    // ƒXƒe[ƒWID‚É‘Î‰‚·‚é•ŠíID‚ğ•Ô‚·ŠÖ”i‘¶İ‚µ‚È‚¢ê‡ -1 ‚ğ•Ô‚·j
+    // ã‚¹ãƒ†ãƒ¼ã‚¸IDã«å¯¾å¿œã™ã‚‹æ­¦å™¨IDã‚’è¿”ã™é–¢æ•°ï¼ˆå­˜åœ¨ã—ãªã„å ´åˆ -1 ã‚’è¿”ã™ï¼‰
     private int GetWeaponIDForStage(int stageID)
     {
         if (stageID < 0 || stageID >= stageToWeaponMap.Length) return -1;
@@ -124,44 +136,43 @@ public class StageManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒQ[ƒ€ƒI[ƒo[ˆ—
+    /// ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼å‡¦ç†
     /// </summary>
     public void GameOver()
     {
-        // •œŠˆƒ{ƒ^ƒ“•\¦
+        // å¾©æ´»ãƒœã‚¿ãƒ³è¡¨ç¤º
         revivalButtonObject.SetActive(true);
 
-        // w’è•b”Œo‰ßŒã‚Éˆ—‚ğÀs
+        // æŒ‡å®šç§’æ•°çµŒéå¾Œã«å‡¦ç†ã‚’å®Ÿè¡Œ
         gameOverTween = DOVirtual.DelayedCall(
-            30.0f,   // •b’x‰„
+            30.0f,   // ç§’é…å»¶
             () => {
-                // ƒV[ƒ“Ø‚è‘Ö‚¦
+                // ã‚·ãƒ¼ãƒ³åˆ‡ã‚Šæ›¿ãˆ
                 SceneManager.LoadScene(0);
             }
         );
     }
     /// <summary>
-	/// uL‚ğŒ©‚Ä•œŠˆvƒ{ƒ^ƒ“‰Ÿ‰ºˆ—
+	/// ã€Œåºƒå‘Šã‚’è¦‹ã¦å¾©æ´»ã€ãƒœã‚¿ãƒ³æŠ¼ä¸‹æ™‚å‡¦ç†
 	/// </summary>
 	public void OnRevivalButtonPressed()
     {
-        // •œŠˆƒ{ƒ^ƒ“”ñ•\¦
+        // å¾©æ´»ãƒœã‚¿ãƒ³éè¡¨ç¤º
         revivalButtonObject.SetActive(false);
 
-        // ƒQ[ƒ€ƒI[ƒo[ˆ—‚ğ’â~
+        // ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼å‡¦ç†ã‚’åœæ­¢
         if (gameOverTween != null)
         {
             gameOverTween.Kill();
             gameOverTween = null;
         }
 
-        // ƒAƒNƒ^[‚ğ•œŠˆ‚³‚¹‚é
+        // ã‚¢ã‚¯ã‚¿ãƒ¼ã‚’å¾©æ´»ã•ã›ã‚‹
         actorController.RevivalActor();
     }
     public void UnlockWeapon(int weaponID)
     {
         if (weaponID < 0 || weaponID >= weaponUnlocked.Length) return;
-
         weaponUnlocked[weaponID] = true;
         if (weaponID < Data.instance.weaponUnlocks.Length)
             Data.instance.weaponUnlocks[weaponID] = true;
@@ -169,13 +180,14 @@ public class StageManager : MonoBehaviour
 
             NewWeaponObject.SetActive(true);
         gameOverTween = DOVirtual.DelayedCall(
-            3.0f,   // •b’x‰„
+            5.0f,   // ç§’é…å»¶
             () => {
-                // UI”ñ•\¦
+                // UIéè¡¨ç¤º
                 NewWeaponObject.SetActive(false);
             }
         );
 
-        Debug.Log("•ŠíID " + weaponID + " ‚ª‰ğ•ú‚³‚ê‚Ü‚µ‚½");
+        Debug.Log("æ­¦å™¨ID " + weaponID + " ãŒè§£æ”¾ã•ã‚Œã¾ã—ãŸ");
     }
 }
+
