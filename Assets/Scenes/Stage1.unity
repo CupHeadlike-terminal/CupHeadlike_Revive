@@ -8273,6 +8273,10 @@ PrefabInstance:
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[9].Array.data[139].Y
       value: -240000000
       objectReference: {fileID: 0}
+    - target: {fileID: 1919298483875923656, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3565389900622042823, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

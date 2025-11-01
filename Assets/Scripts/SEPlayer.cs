@@ -17,17 +17,9 @@ public class SEPlayer : MonoBehaviour
     public enum SEName
     {
         // (システム)
-        DecideA,
+ 
         // (ゲーム)
-        ActorShot_Normal,
-        Actor_Damaged,
-        Actor_Defeat,
-        Actor_Jump,
-        Enemy_Damaged,
-        Enemy_Defeat,
-        Boss_Defeat,
-        Item_LifeUp,
-        Item_EnergyUp,
+        Normal_Shot,
     }
     // 登録効果音参照リスト(上の定義リストと同じ順番でインスペクタから格納)
     public List<AudioClip> seClips = null;
