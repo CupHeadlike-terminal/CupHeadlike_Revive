@@ -18,5 +18,5 @@ EditorBuildSettings:
     path: Assets/Scenes/WeaponGetAnimation.unity
     guid: ad9de8c04c65afe44a865da97d0f690f
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: d6f2d3f448cfb3e4d816584c29e18f42, type: 3}
   m_UseUCBPForAssetBundles: 0

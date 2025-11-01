@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Enemy\WeaponDrop.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorNormalShot.cs" />
     <Compile Include="Assets\Scripts\Enemy\Boss_Dog.cs" />
+    <Compile Include="Assets\Scripts\InputAction.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_Shot.cs" />
     <Compile Include="Assets\Scripts\Actor\ActorController.cs" />
     <Compile Include="Assets\Scripts\StageSelectManager.cs" />

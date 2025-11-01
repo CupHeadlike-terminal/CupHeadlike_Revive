@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.InputSystem;
+using System.Diagnostics;
 
 /// <summary>
 /// アクター操作・制御クラス
@@ -63,6 +65,8 @@ public class ActorController : MonoBehaviour
     private const float KnockBack_X = 2.5f;     // 被ダメージ時ノックバック力(x方向)
     private const float WaterModeDecelerate_X = 0.8f;// 水中でのX方向速度倍率
     private const float WaterModeDecelerate_Y = 0.92f;// 水中でのX方向速度倍率
+
+    bool movingLeft,movingRight,movingUp;
 
     // アクター装備定義
     public enum ActorWeaponType
@@ -177,10 +181,10 @@ public class ActorController : MonoBehaviour
     /// <summary>
     /// Updateから呼び出される左右移動入力処理
     /// </summary>
-    private void MoveUpdate()
+    public void MoveUpdate()
     {
         // X方向移動入力
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || movingRight)
         {// 右方向の移動入力
          // X方向移動速度をプラスに設定
             xSpeed = 6.0f;
@@ -191,7 +195,7 @@ public class ActorController : MonoBehaviour
             // スプライトを通常の向きで表示
             spriteRenderer.flipX = false;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) || movingLeft)
         {// 左方向の移動入力
          // X方向移動速度をマイナスに設定
             xSpeed = -6.0f;
@@ -209,17 +213,31 @@ public class ActorController : MonoBehaviour
         }
     }
 
+    public void OnMoveLeft(InputAction.CallbackContext context)
+    {
+        var value = context.ReadValue<float>();
+        UnityEngine.Debug.Log($"left pressed:{value}");
+        movingLeft = value > 0f;
+    }
+
+    public void OnMoveRight(InputAction.CallbackContext context)
+    {
+        var value = context.ReadValue<float>();
+        UnityEngine.Debug.Log($"right pressed:{value}");
+        movingRight = value > 0f;
+    }
+
     /// <summary>
     /// Updateから呼び出されるジャンプ入力処理
     /// </summary>
-    private void JumpUpdate()
+     void JumpUpdate()
     {
         // 空中でのジャンプ入力受付時間減少
         if (remainJumpTime > 0.0f)
             remainJumpTime -= Time.deltaTime;
 
         // ジャンプ操作
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || movingUp)
         {// ジャンプ開始
          // 接地していないなら終了(水中であれば続行)
             if (!groundSensor.isGround && !inWaterMode)
@@ -233,7 +251,7 @@ public class ActorController : MonoBehaviour
             // 空中でのジャンプ入力受け付け時間設定
             remainJumpTime = 0.25f;
         }
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.UpArrow) || movingUp)
         {// ジャンプ中（ジャンプ入力を長押しすると継続して上昇する処理）
          // 空中でのジャンプ入力受け付け時間が残ってないなら終了
             if (remainJumpTime <= 0.0f)
@@ -247,10 +265,17 @@ public class ActorController : MonoBehaviour
                                                          // ジャンプ力加算を適用
             rigidbody2D.linearVelocity += new Vector2(0.0f, jumpAddPower);
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        else if (Input.GetKeyUp(KeyCode.UpArrow) || movingUp)
         {// ジャンプ入力終了
             remainJumpTime = -1.0f;
         }
+    }
+
+    public void OnMoveUp(InputAction.CallbackContext context)
+    {
+        var value = context.ReadValue<float>();
+        UnityEngine.Debug.Log($"up pressed:{value}");
+        movingUp = value > 0f;
     }
 
     // FixedUpdate（一定時間ごとに1度ずつ実行・物理演算用）
