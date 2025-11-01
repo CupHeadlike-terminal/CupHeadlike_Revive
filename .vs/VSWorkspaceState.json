@@ -2,11 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Assets",
-    "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\Actor",
-    "\\Assets\\Scripts\\Enemy",
-    "\\Assets\\Scripts\\Gimmic"
+    "\\Assets\\Scripts"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\WeaponGetAnimation.cs",
   "PreviewInSolutionExplorer": false
 }

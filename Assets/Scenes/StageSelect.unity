@@ -740,9 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5016694490593554245, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
       propertyPath: m_Text
-      value: 'Button1
-
-'
+      value: STAGE2
       objectReference: {fileID: 0}
     - target: {fileID: 5602659381424245960, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
       propertyPath: m_Pivot.x
@@ -949,6 +947,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1702183083}
+    - target: {fileID: 5016694490593554245, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
+      propertyPath: m_Text
+      value: STAGE1
+      objectReference: {fileID: 0}
     - target: {fileID: 5602659381424245960, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

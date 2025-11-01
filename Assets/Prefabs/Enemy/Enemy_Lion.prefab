@@ -152,7 +152,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.2}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.7, y: 1.8}
+  m_Size: {x: 1.7, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &931112717566671566
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaManager: {fileID: 0}
   sprite_Defeat: {fileID: 21300000, guid: eb5354569f0b8af4289ba98f8d3f35c7, type: 3}
-  maxHP: 40
+  maxHP: 50
   touchDamage: 3
   isBoss: 1
   bossDefeatParticlePrefab: {fileID: 5275496971692960708, guid: 020d2bbe6feb05a43bdeedefada35b1f, type: 3}
@@ -220,7 +220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7174074038285614278, guid: b2ba923e4f7405f419f0d84b533aaf05, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 7174074038285614278, guid: b2ba923e4f7405f419f0d84b533aaf05, type: 3}
       propertyPath: m_LocalPosition.y
@@ -257,6 +257,14 @@ PrefabInstance:
     - target: {fileID: 7174074038285614278, guid: b2ba923e4f7405f419f0d84b533aaf05, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015961516473063890, guid: b2ba923e4f7405f419f0d84b533aaf05, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9015961516473063890, guid: b2ba923e4f7405f419f0d84b533aaf05, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
