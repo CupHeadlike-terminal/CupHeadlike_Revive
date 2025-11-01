@@ -652,6 +652,36 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657c2027ac4031e4194d31d6d8aaa922, type: 3}
+--- !u!1 &322281351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8534064133567515198, guid: f9daed858831a6140a276e8584854d48, type: 3}
+  m_PrefabInstance: {fileID: 555818315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &322281353 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5936866111174653376, guid: f9daed858831a6140a276e8584854d48, type: 3}
+  m_PrefabInstance: {fileID: 555818315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322281351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &322281356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322281351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbc64c9525e4ca4faad8103a9a77d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 322281353}
+  triggerKey: 97
 --- !u!4 &329285008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6113517467010464674, guid: 4ad725c70a8a8b745a0fb8c8063f2d02, type: 3}
@@ -40937,7 +40967,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6076693540439330559, guid: f9daed858831a6140a276e8584854d48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1957103648}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8534064133567515198, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322281356}
   m_SourcePrefab: {fileID: 100100000, guid: f9daed858831a6140a276e8584854d48, type: 3}
 --- !u!1001 &584436302
 PrefabInstance:
@@ -43746,6 +43779,14 @@ PrefabInstance:
     - target: {fileID: 931112717566671566, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
       propertyPath: maxHP
       value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 931112717566671566, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
+      propertyPath: angerHP
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 931112717566671566, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
+      propertyPath: angerTime
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4475161570853606109, guid: 9f2fcfd04a11f194a8cf542ee33d25b1, type: 3}
       propertyPath: m_LocalPosition.x

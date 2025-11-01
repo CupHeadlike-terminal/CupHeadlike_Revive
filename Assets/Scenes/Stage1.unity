@@ -33488,6 +33488,22 @@ PrefabInstance:
       value: "\u30B9\u30C6\u30FC\u30B8\uFF11\u30AF\u30EA\u30A2\uFF01\uFF01\n\u65B0\u3057\u3044\u6B66\u5668\u3092\u624B\u306B\u5165\u308C\u305F\uFF01\nA\u3092\u62BC\u3057\u3066\u4F7F\u3063\u3066\u307F\u3088\u3046\uFF01\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6215719308683557620, guid: 816018160c1787a47968e5873d6500cd, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.09952123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215719308683557620, guid: 816018160c1787a47968e5873d6500cd, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.8427072
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215719308683557620, guid: 816018160c1787a47968e5873d6500cd, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.8553459
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215719308683557620, guid: 816018160c1787a47968e5873d6500cd, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4279883738
+      objectReference: {fileID: 0}
+    - target: {fileID: 6215719308683557620, guid: 816018160c1787a47968e5873d6500cd, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
