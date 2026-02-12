@@ -6,24 +6,6 @@
             "id": "3cf66c92-b6eb-4510-a3cf-8d857f8219b6",
             "actions": [
                 {
-                    "name": "Move",
-                    "type": "Value",
-                    "id": "5d5e40f3-d9fc-49cd-8b42-32ebcb6b0776",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "15c68fa4-4fa6-4d2d-bc92-08205d9e2bf7",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "2f9f4395-dfe2-4362-b3aa-af4a68aa5dc5",
@@ -102,76 +84,10 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "3f174235-59de-4640-a71a-9da95938e463",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e0c4a675-7935-4003-b7e8-f212047891bd",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "94b62639-df0d-42ff-9652-80a3ffc9af1a",
-                    "path": "<Joystick>/stick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a8d258fc-1b21-462a-b9d6-2795f16ae123",
-                    "path": "<Joystick>/stick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f1f9421f-0336-4489-9708-cc498d602fba",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0adbc5eb-3ce9-4af3-91e8-b0c7c902b40c",
-                    "path": "<Joystick>/stick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "d7a3d59f-1984-4d21-9354-e4d23fb98dd9",
@@ -329,7 +245,7 @@
                 {
                     "name": "",
                     "id": "f402a539-9778-4982-a395-f8d6bd46ba6b",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/up",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

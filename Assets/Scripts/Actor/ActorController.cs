@@ -227,56 +227,88 @@ public class ActorController : MonoBehaviour
         movingRight = value > 0f;
     }
 
+    bool jumpPressed;
+    bool jumpHeld;
+    bool jumpReleased;
     /// <summary>
     /// Updateから呼び出されるジャンプ入力処理
     /// </summary>
-     void JumpUpdate()
+    public void OnJump(InputAction.CallbackContext ctx)
     {
-        // 空中でのジャンプ入力受付時間減少
-        if (remainJumpTime > 0.0f)
+        if (ctx.started)
+        {
+            jumpPressed = true;   // 押した瞬間（1フレーム）
+            jumpHeld = true;      // 押し始めたので true
+        }
+
+        if (ctx.performed)
+        {
+            jumpHeld = true;      // 押している間ずっと true
+        }
+
+        if (ctx.canceled)
+        {
+            jumpReleased = true;  // 離した瞬間（1フレーム）
+            jumpHeld = false;     // 離したので false
+        }
+    }
+
+    void JumpUpdate()
+    {
+        UnityEngine.Debug.Log(
+         $"JumpUpdate: pressed={jumpPressed}, held={jumpHeld}, released={jumpReleased}, ground={groundSensor.isGround}, remain={remainJumpTime}"
+);
+        // --- 1. ジャンプ開始 ---
+        if (jumpPressed)
+        {
+            // 地面にいる、または水中にいる場合のみジャンプ
+            if (groundSensor.isGround || inWaterMode)
+            {
+                float jumpPower = 10.0f;
+                rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpPower);
+                remainJumpTime = 0.25f;
+            }
+
+            // 重要：フラグをリセット（これをしないと毎フレームジャンプ判定が走る）
+            jumpPressed = false;
+        }
+
+        // --- 2. ジャンプ継続（長押しによる追加上昇） ---
+        if (jumpHeld && remainJumpTime > 0.0f)
+        {
             remainJumpTime -= Time.deltaTime;
 
-        // ジャンプ操作
-        if (Input.GetKeyDown(KeyCode.UpArrow) || movingUp)
-        {// ジャンプ開始
-         // 接地していないなら終了(水中であれば続行)
-            if (!groundSensor.isGround && !inWaterMode)
-                return;
-
-            // ジャンプ力を計算
-            float jumpPower = 10.0f;
-            // ジャンプ力を適用
-            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpPower);
-
-            // 空中でのジャンプ入力受け付け時間設定
-            remainJumpTime = 0.25f;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow) || movingUp)
-        {// ジャンプ中（ジャンプ入力を長押しすると継続して上昇する処理）
-         // 空中でのジャンプ入力受け付け時間が残ってないなら終了
-            if (remainJumpTime <= 0.0f)
-                return;
-            // 接地しているなら終了
-            if (groundSensor.isGround)
-                return;
-
-            // ジャンプ力加算量を計算
-            float jumpAddPower = 30.0f * Time.deltaTime; // Update()は呼び出し間隔が異なるのでTime.deltaTimeが必要
-                                                         // ジャンプ力加算を適用
+            // 空中でさらに力を加える
+            float jumpAddPower = 30.0f * Time.deltaTime;
             rigidbody2D.linearVelocity += new Vector2(0.0f, jumpAddPower);
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow) || movingUp)
-        {// ジャンプ入力終了
-            remainJumpTime = -1.0f;
+        // 指が離れた、または制限時間を超えたらタイマーを止める
+        else if (!jumpHeld || remainJumpTime <= 0.0f)
+        {
+            remainJumpTime = 0.0f;
+        }
+
+        // --- 3. ジャンプ終了（ボタンを離した瞬間の処理） ---
+        if (jumpReleased)
+        {
+            // 上昇中にボタンを離したら、上昇速度を減衰させて「小ジャンプ」を可能にする
+            if (rigidbody2D.linearVelocity.y > 0)
+            {
+                rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, rigidbody2D.linearVelocity.y * 0.5f);
+            }
+
+            // 重要：フラグをリセット
+            jumpReleased = false;
         }
     }
 
-    public void OnMoveUp(InputAction.CallbackContext context)
-    {
-        var value = context.ReadValue<float>();
-        UnityEngine.Debug.Log($"up pressed:{value}");
-        movingUp = value > 0f;
-    }
+    
+
+
+
+
+
+
 
     // FixedUpdate（一定時間ごとに1度ずつ実行・物理演算用）
     private void FixedUpdate()

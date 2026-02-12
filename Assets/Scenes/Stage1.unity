@@ -461,6 +461,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2682166118865851386, guid: f9daed858831a6140a276e8584854d48, type: 3}
   m_PrefabInstance: {fileID: 586486590972834674}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2096587485 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4405417598133152103, guid: f9daed858831a6140a276e8584854d48, type: 3}
+  m_PrefabInstance: {fileID: 586486590972834674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7594ae92050532e46b238cb734e48c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &586486590972834674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -472,6 +483,138 @@ PrefabInstance:
     - target: {fileID: 342896937803602420, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 2f9f4395-dfe2-4362-b3aa-af4a68aa5dc5
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: a8f07573-3c2e-4a9c-9a27-c9456b71a6df
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 381f25c6-7ee0-400a-b75a-f7db00854a1c
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: da3761d6-7ba3-4d94-9f9f-c696cb11bc73
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 300ead06-38f0-47ca-b66c-0da24386f7c6
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: f1fc3f18-8d54-4fc7-825b-cbe369b55d27
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: a90c99be-e0c4-4f92-90ec-df002ebfdabe
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 08634cec-6722-4589-9580-8983ff8fae81
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: 50696f97-13fd-4b1b-b32a-bb542dc35d14
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'GamePlay/Attack[/Keyboard/z]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'GamePlay/WeaponChange[/Keyboard/a]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'GamePlay/Title[/Keyboard/a]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: 'GamePlay/Stage1[/Keyboard/z]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'GamePlay/Stage2[/Keyboard/a]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: 'GamePlay/Revive[/Keyboard/a]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: GamePlay/MoveLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: GamePlay/MoveRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: 'GamePlay/MoveUp[/DragonRise Inc.   Generic   USB  Joystick  /stick/up]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096587485}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096587485}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMoveLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMoveRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMoveUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActorController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActorController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 726860555643668092, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
