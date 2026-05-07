@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -155,8 +156,9 @@ public class StageManager : MonoBehaviour
     /// <summary>
 	/// 「広告を見て復活」ボタン押下時処理
 	/// </summary>
-	public void OnRevivalButtonPressed()
+	public void OnRevivalButtonPressed(InputAction.CallbackContext context)
     {
+        if(!context.performed) return;
         // 復活ボタン非表示
         revivalButtonObject.SetActive(false);
 

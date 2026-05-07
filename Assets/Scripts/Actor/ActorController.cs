@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.InputSystem;
-using System.Diagnostics;
 
 /// <summary>
 /// アクター操作・制御クラス
@@ -47,6 +46,7 @@ public class ActorController : MonoBehaviour
 
     // 移動関連変数
     [HideInInspector] public float xSpeed; // X方向移動速度
+    float ySpeed; // Y方向移動速度(ジャンプの上昇力などで使用)
     [HideInInspector] public bool rightFacing; // 向いている方向(true.右向き false:左向き)
     private float remainJumpTime;   // 空中でのジャンプ入力残り受付時間
 
@@ -142,22 +142,19 @@ public class ActorController : MonoBehaviour
 
         // 左右移動処理
         MoveUpdate();
+
         // ジャンプ入力処理
         JumpUpdate();
 
-        // 武器切り替え処理
-        ChangeWeaponUpdate();
 
         // 攻撃可能までの残り時間減少
         if (weaponRemainInterval > 0.0f)
             weaponRemainInterval -= Time.deltaTime;
 
-        // 攻撃入力処理
-        StartShotAction();
-
         // 坂道で滑らなくする処理
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation; // Rigidbodyの機能のうち回転だけは常に停止
-        if (groundSensor.isGround && !Input.GetKey(KeyCode.UpArrow))
+        // Use the jumpHeld flag from the new Input System instead of Input.GetKey
+        if (groundSensor.isGround && !jumpHeld)
         {
             // 坂道を登っている時上昇力が働かないようにする処理
             if (rigidbody2D.linearVelocity.y > 0.0f)
@@ -239,24 +236,27 @@ public class ActorController : MonoBehaviour
         {
             jumpPressed = true;   // 押した瞬間（1フレーム）
             jumpHeld = true;      // 押し始めたので true
+            Debug.Log("Jump started");
         }
 
         if (ctx.performed)
         {
             jumpHeld = true;      // 押している間ずっと true
+            Debug.Log("Jump performed");
         }
 
         if (ctx.canceled)
         {
             jumpReleased = true;  // 離した瞬間（1フレーム）
             jumpHeld = false;     // 離したので false
+            Debug.Log("Jump canceled");
         }
     }
 
     void JumpUpdate()
     {
         UnityEngine.Debug.Log(
-         $"JumpUpdate: pressed={jumpPressed}, held={jumpHeld}, released={jumpReleased}, ground={groundSensor.isGround}, remain={remainJumpTime}"
+         $"JumpUpdate: pressed={jumpPressed}, held={jumpHeld}, released={jumpReleased}, ground={groundSensor.isGround}, remain={remainJumpTime}, ySpeed={ySpeed}"
 );
         // --- 1. ジャンプ開始 ---
         if (jumpPressed)
@@ -264,6 +264,7 @@ public class ActorController : MonoBehaviour
             // 地面にいる、または水中にいる場合のみジャンプ
             if (groundSensor.isGround || inWaterMode)
             {
+                Debug.Log("Jump started: applying initial jump power");
                 float jumpPower = 10.0f;
                 rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpPower);
                 remainJumpTime = 0.25f;
@@ -280,7 +281,8 @@ public class ActorController : MonoBehaviour
 
             // 空中でさらに力を加える
             float jumpAddPower = 30.0f * Time.deltaTime;
-            rigidbody2D.linearVelocity += new Vector2(0.0f, jumpAddPower);
+            // 既にセットされた初期ジャンプ力を上書きしないよう、増分として加算する
+            rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, rigidbody2D.linearVelocity.y + jumpAddPower);
         }
         // 指が離れた、または制限時間を超えたらタイマーを止める
         else if (!jumpHeld || remainJumpTime <= 0.0f)
@@ -322,7 +324,6 @@ public class ActorController : MonoBehaviour
         if (inWaterMode)
         {
             velocity.x *= WaterModeDecelerate_X;
-            velocity.y *= WaterModeDecelerate_Y;
         }
 
         // 計算した移動速度ベクトルをRigidbody2Dに反映
@@ -454,11 +455,13 @@ public class ActorController : MonoBehaviour
     /// <summary>
     /// 攻撃ボタン入力時処理
     /// </summary>
-    public void StartShotAction()
+    public void StartShotAction(InputAction.CallbackContext context)
     {
-        // 攻撃ボタンが入力されていないなら終了
-        if (!Input.GetKeyDown(KeyCode.Z))
+        if(!context.performed)
+        {
             return;
+        }
+
         // 武器エネルギーが足りないなら攻撃しない
         if (weaponEnergies[(int)nowWeapon] <= 0)
             return;

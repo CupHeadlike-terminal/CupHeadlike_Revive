@@ -165,6 +165,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetButton: {fileID: 577640776}
   triggerKey: 97
+  inputAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a8808853-04d8-464f-bc56-d0b118222e1c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &998040551
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,10 +206,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2082460285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00086212, y: -0.00082397}
-  m_SizeDelta: {x: 722.67, y: 330.33}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998040553
 MonoBehaviour:
@@ -419,17 +428,17 @@ RectTransform:
   m_GameObject: {fileID: 1378983348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1354699201}
   - {fileID: 23087629}
   m_Father: {fileID: 2082460285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0018921, y: -0.0023193}
-  m_SizeDelta: {x: 722.67, y: 330.33}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -960, y: -540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1378983350
 MonoBehaviour:
@@ -527,10 +536,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2082460285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0066833, y: 0.00083923}
-  m_SizeDelta: {x: 727.35, y: 339.67}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440089203
 MonoBehaviour:
@@ -602,6 +611,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetButton: {fileID: 1440089203}
   triggerKey: 97
+  inputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f6297974-82d8-400f-82fb-29029f7035c8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &1586438885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -718,6 +736,7 @@ GameObject:
   - component: {fileID: 1950467983}
   - component: {fileID: 1950467982}
   - component: {fileID: 1950467981}
+  - component: {fileID: 1950467984}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -786,6 +805,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1950467984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950467980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d6f2d3f448cfb3e4d816584c29e18f42, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f9f4395-dfe2-4362-b3aa-af4a68aa5dc5
+    m_ActionName: 'GamePlay/Attack[/DragonRise Inc.   Generic   USB  Joystick  /button2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a8f07573-3c2e-4a9c-9a27-c9456b71a6df
+    m_ActionName: 'GamePlay/WeaponChange[/DragonRise Inc.   Generic   USB  Joystick 
+      /button3]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1702183083}
+        m_TargetAssemblyTypeName: StageSelectManager, Assembly-CSharp
+        m_MethodName: OnTitlePictureTapped
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 381f25c6-7ee0-400a-b75a-f7db00854a1c
+    m_ActionName: 'GamePlay/Title[/DragonRise Inc.   Generic   USB  Joystick  /button3]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: da3761d6-7ba3-4d94-9f9f-c696cb11bc73
+    m_ActionName: 'GamePlay/Stage1[/DragonRise Inc.   Generic   USB  Joystick  /button2]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 300ead06-38f0-47ca-b66c-0da24386f7c6
+    m_ActionName: 'GamePlay/Stage2[/DragonRise Inc.   Generic   USB  Joystick  /button3]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1fc3f18-8d54-4fc7-825b-cbe369b55d27
+    m_ActionName: 'GamePlay/Revive[/DragonRise Inc.   Generic   USB  Joystick  /button3]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a90c99be-e0c4-4f92-90ec-df002ebfdabe
+    m_ActionName: 'GamePlay/MoveLeft[/DragonRise Inc.   Generic   USB  Joystick 
+      /stick/down]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08634cec-6722-4589-9580-8983ff8fae81
+    m_ActionName: 'GamePlay/MoveRight[/DragonRise Inc.   Generic   USB  Joystick 
+      /stick/left]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 50696f97-13fd-4b1b-b32a-bb542dc35d14
+    m_ActionName: 'GamePlay/MoveUp[/DragonRise Inc.   Generic   USB  Joystick  /stick/up]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: GamePlay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2007965150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1470113835246641610, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
@@ -815,7 +915,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetButton: {fileID: 2007965151}
-  triggerKey: 122
+  triggerKey: 333
+  inputAction:
+    m_Name: Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 98decfed-efc5-442f-90d1-cbd9c3c11c68
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 75086454-a385-429b-914b-16136a17ce10
+      m_Path: <HID::DragonRise Inc.   Generic   USB  Joystick  >/button2
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Input
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &2026211011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1159,6 +1276,10 @@ PrefabInstance:
     - target: {fileID: 5602659381424245960, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602659381424245960, guid: 03157135e6c15194e8f6bf3643a2f632, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

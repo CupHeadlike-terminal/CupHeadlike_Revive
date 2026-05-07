@@ -561,6 +561,10 @@ PrefabInstance:
       value: 'GamePlay/MoveUp[/DragonRise Inc.   Generic   USB  Joystick  /stick/up]'
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -569,9 +573,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2096587485}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -581,12 +593,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2096587485}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartShotAction
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -598,7 +618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnMoveUp
+      value: OnJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActorController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -607,6 +631,10 @@ PrefabInstance:
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ActorController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 492474058184935338, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -33562,6 +33590,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7480312679556570038, guid: f9daed858831a6140a276e8584854d48, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589013646141287342, guid: f9daed858831a6140a276e8584854d48, type: 3}
+      propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

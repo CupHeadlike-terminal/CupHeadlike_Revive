@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// ステージセレクト画面管理クラス
@@ -55,11 +56,14 @@ public class StageSelectManager : MonoBehaviour
     /// <summary>
     /// タイトル画像オブジェクトタップ時に呼び出し
     /// </summary>
-    public void OnTitlePictureTapped()
+    public void OnTitlePictureTapped(InputAction.CallbackContext context)
     {
+        if(!context.performed) return;
         // タイトル画像オブジェクトを無効化
         titlePictureObject.SetActive(false);
         // タイトル画面タップ済みフラグをセット
         Data.instance.isTitleDisplayed = true;
+
+        OnStageSelectButtonPressed(0); // ステージ1へ遷移
     }
 }

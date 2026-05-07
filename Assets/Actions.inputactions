@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Actions",
     "maps": [
         {
@@ -84,7 +85,7 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -102,7 +103,7 @@
                 {
                     "name": "",
                     "id": "b31b2469-4a84-4730-b16a-d0a42ee31e9f",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -124,7 +125,7 @@
                 {
                     "name": "",
                     "id": "495ec756-cff6-4a17-ad62-b3ee2276851e",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -146,7 +147,7 @@
                 {
                     "name": "",
                     "id": "fa058e32-cdfd-4aa4-ba7b-26842ecb1abd",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -168,7 +169,7 @@
                 {
                     "name": "",
                     "id": "8967b0c9-1600-48bb-8822-1bdd69aab3b9",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -190,7 +191,7 @@
                 {
                     "name": "",
                     "id": "fac99521-2667-48d5-8f81-8c3776fcbec4",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -212,7 +213,7 @@
                 {
                     "name": "",
                     "id": "36d1b498-d241-421a-a66c-dd71f73dbf73",
-                    "path": "",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -222,8 +223,8 @@
                 },
                 {
                     "name": "",
-                    "id": "07607488-8f11-41f9-9d6e-f77f7cf8e0c4",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/left",
+                    "id": "731a5c20-5f61-4a39-9128-ed37019901a5",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -234,7 +235,7 @@
                 {
                     "name": "",
                     "id": "77fd905c-c2a1-42f1-a023-72c5d0314df7",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/down",
+                    "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -246,6 +247,28 @@
                     "name": "",
                     "id": "f402a539-9778-4982-a395-f8d6bd46ba6b",
                     "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/button3",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0d3f70e-9c7c-4ec8-9098-5877d37a1197",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "83770296-d5bf-4719-8ec9-1c512c7aeeed",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
