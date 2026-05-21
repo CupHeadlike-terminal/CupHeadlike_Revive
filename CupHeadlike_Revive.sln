@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{352C9748-517A-573B-DB39-60462B366414}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.Player.csproj", "{FCC42554-85C3-9F7B-4F47-095D710118CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.Player.csproj", "{3C0905BF-2DA0-9E97-D761-B1B9025A0699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{352C9748-517A-573B-DB39-60462B366414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{352C9748-517A-573B-DB39-60462B366414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{352C9748-517A-573B-DB39-60462B366414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC42554-85C3-9F7B-4F47-095D710118CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC42554-85C3-9F7B-4F47-095D710118CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC42554-85C3-9F7B-4F47-095D710118CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC42554-85C3-9F7B-4F47-095D710118CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0905BF-2DA0-9E97-D761-B1B9025A0699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0905BF-2DA0-9E97-D761-B1B9025A0699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0905BF-2DA0-9E97-D761-B1B9025A0699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0905BF-2DA0-9E97-D761-B1B9025A0699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
