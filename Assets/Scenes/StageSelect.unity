@@ -166,7 +166,7 @@ MonoBehaviour:
   targetButton: {fileID: 577640776}
   triggerKey: 97
   inputAction:
-    m_Name: 
+    m_Name: Input
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: a8808853-04d8-464f-bc56-d0b118222e1c
@@ -630,15 +630,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1012421964087318443, guid: f2dea30e299c26a4da72baace8d284ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.200977
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1012421964087318443, guid: f2dea30e299c26a4da72baace8d284ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.4878707
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1012421964087318443, guid: f2dea30e299c26a4da72baace8d284ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.049827
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1012421964087318443, guid: f2dea30e299c26a4da72baace8d284ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -719,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 1702183082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 392.3215, y: 144.3514, z: -2.5127122}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
