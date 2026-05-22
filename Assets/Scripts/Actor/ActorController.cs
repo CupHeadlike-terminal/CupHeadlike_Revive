@@ -171,6 +171,22 @@ public class ActorController : MonoBehaviour
 
         // カメラに自身の座標を渡す
         cameraController.SetPosition(transform.position);
+
+        //ジャンプアクションキーボード用
+        if (Input.GetKey(KeyCode.Space))
+        {
+            jumpPressed = true;
+            jumpHeld = true;
+        }
+        else
+        { 
+            jumpHeld = false;
+        }
+
+        if(Input.GetKey(KeyCode.Z))
+        {
+            ShotAction_Normal();
+        }
     }
 
 

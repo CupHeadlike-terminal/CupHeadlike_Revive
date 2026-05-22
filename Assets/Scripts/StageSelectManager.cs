@@ -10,6 +10,8 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class StageSelectManager : MonoBehaviour
 {
+    private bool TitleButtonPush = false;
+
     // ステージ選択ボタンリスト
     [SerializeField] private List<Image> stageSelectButtonImages = null;
     // タイトルImageオブジェクト
@@ -65,5 +67,20 @@ public class StageSelectManager : MonoBehaviour
         Data.instance.isTitleDisplayed = true;
 
         OnStageSelectButtonPressed(0); // ステージ1へ遷移
+    }
+
+    void Update()
+    {
+        //Debug.Log("hannnousitao");
+        //キーボードでスペースを押すとステージ1に移行
+        if(Input.GetKey(KeyCode.Space))
+        {
+            if (!TitleButtonPush)
+            {
+                TitleButtonPush = true;
+                OnStageSelectButtonPressed(0);
+            }
+
+        }
     }
 }
