@@ -82,5 +82,9 @@ public class StageSelectManager : MonoBehaviour
             }
 
         }
+        if(Input.GetKey(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("StageSelectNEW",LoadSceneMode.Single);
+        }
     }
 }

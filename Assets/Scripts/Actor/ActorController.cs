@@ -274,6 +274,8 @@ public class ActorController : MonoBehaviour
         UnityEngine.Debug.Log(
          $"JumpUpdate: pressed={jumpPressed}, held={jumpHeld}, released={jumpReleased}, ground={groundSensor.isGround}, remain={remainJumpTime}, ySpeed={ySpeed}"
 );
+
+        
         // --- 1. ジャンプ開始 ---
         if (jumpPressed)
         {
