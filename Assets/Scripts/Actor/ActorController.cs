@@ -740,4 +740,15 @@ public class ActorController : MonoBehaviour
             1, // ダメージ量
             1.0f); // 存在時間
     }
+
+    private void OnCollisionStay2D(Collision2D collision)//ステージ2の時に下に下げたいね
+    {
+        if(collision.gameObject.name.Contains("OneWay"))
+        {
+            if(Input.GetKey(KeyCode.DownArrow))
+            {
+                //this.gameObject.transform.position += new Vector2(0f, -5f);
+            }
+        }
+    }
 }
