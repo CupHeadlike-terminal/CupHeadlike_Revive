@@ -33,6 +33,9 @@ public class StageManager : MonoBehaviour
     // ステージIDに対応する武器ID（-1なら解放なし）
     private int[] stageToWeaponMap = { -1, 1, 2, 3, 4, 5, 6 };
 
+    //ゲームオーバー時に復活ボタンを動かすためのbool
+    private bool death = false;
+
     void Awake()
     {
         weaponUnlocked = new bool[(int)ActorController.ActorWeaponType._Max];
@@ -78,6 +81,17 @@ public class StageManager : MonoBehaviour
         CrearObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if(death)
+        {
+            if(Input.GetKey(KeyCode.Space))
+            {
+                OnHukkatuButton();
+                death = false;
+            }
+        }
+    }
     /// <summary>
     /// ステージ内の全エリアを無効化する
     /// </summary>
@@ -143,6 +157,7 @@ public class StageManager : MonoBehaviour
     {
         // 復活ボタン表示
         revivalButtonObject.SetActive(true);
+        death = true;
 
         // 指定秒数経過後に処理を実行
         gameOverTween = DOVirtual.DelayedCall(
@@ -170,6 +185,18 @@ public class StageManager : MonoBehaviour
         }
 
         // アクターを復活させる
+        actorController.RevivalActor();
+    }
+    public void OnHukkatuButton()
+    {
+        revivalButtonObject.SetActive(false);
+
+        if(gameOverTween != null)
+        {
+            gameOverTween.Kill();
+            gameOverTween = null;
+        }
+
         actorController.RevivalActor();
     }
     public void UnlockWeapon(int weaponID)
