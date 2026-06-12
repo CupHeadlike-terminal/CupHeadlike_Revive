@@ -18,7 +18,7 @@ public class StageButtondayo : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("hahahahaha");
+        //Debug.Log("hahahahaha");
         if(Input.GetKey(KeyCode.Space))
         {
             Debug.Log(this.gameObject.name);

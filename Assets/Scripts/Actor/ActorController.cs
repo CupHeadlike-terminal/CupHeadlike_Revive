@@ -271,10 +271,11 @@ public class ActorController : MonoBehaviour
 
     void JumpUpdate()
     {
+        /*
         UnityEngine.Debug.Log(
          $"JumpUpdate: pressed={jumpPressed}, held={jumpHeld}, released={jumpReleased}, ground={groundSensor.isGround}, remain={remainJumpTime}, ySpeed={ySpeed}"
 );
-
+        */
         
         // --- 1. ジャンプ開始 ---
         if (jumpPressed)
@@ -741,14 +742,5 @@ public class ActorController : MonoBehaviour
             1.0f); // 存在時間
     }
 
-    private void OnCollisionStay2D(Collision2D collision)//ステージ2の時に下に下げたいね
-    {
-        if(collision.gameObject.name.Contains("OneWay"))
-        {
-            if(Input.GetKey(KeyCode.DownArrow))
-            {
-                //this.gameObject.transform.position += new Vector2(0f, -5f);
-            }
-        }
-    }
+
 }
