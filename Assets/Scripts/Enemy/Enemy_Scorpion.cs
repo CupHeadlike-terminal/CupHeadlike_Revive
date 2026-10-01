@@ -23,6 +23,8 @@ public class Enemy_Scorpion : EnemyBase
     private float timeCount;
     private float nextActionTime;
 
+    
+
     // Start
     void Start()
     {

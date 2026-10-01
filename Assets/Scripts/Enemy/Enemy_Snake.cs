@@ -33,6 +33,15 @@ public class Enemy_Snake : EnemyBase
         base.OnAreaActivated();
     }
 
+    private void Awake()// ステージ３で重力の影響を弱める
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
+        if (Space.space)
+        {
+            rigidbody2D.gravityScale = 0.3f;
+        }
+    }
+
 
     // Update
     void Update()

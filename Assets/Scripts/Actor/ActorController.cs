@@ -56,6 +56,7 @@ public class ActorController : MonoBehaviour
     [HideInInspector] public bool isDefeat; // true:撃破された(ゲームオーバー)
     [HideInInspector] public bool inWaterMode; // true:水中モード(メソッドから変更)
     [HideInInspector] public bool unmovableMode; // 行動禁止モード
+    
 
     // 定数定義
     private const int InitialHP = 20;           // 初期HP(最大HP)
@@ -106,6 +107,11 @@ public class ActorController : MonoBehaviour
         rightFacing = true; // 最初は右向き
         nowHP = maxHP = InitialHP;
         hpGage.fillAmount = 1.0f; // HPゲージの初期FillAmount
+
+        if(Space.space)// ステージ３の時に重力の影響を弱める
+        {
+            rigidbody2D.gravityScale = 0.7f;
+        }
     }
 
     // Update（1フレームごとに1度ずつ実行）
@@ -187,6 +193,20 @@ public class ActorController : MonoBehaviour
         {
             ShotAction_Normal();
         }
+        
+        if(Space.space)
+        {
+            if (rigidbody2D.linearVelocity.y < -1)
+            {
+                rigidbody2D.gravityScale = 0.2f;
+            }
+            else
+            {
+                rigidbody2D.gravityScale = 0.7f;
+            }
+        }
+        
+        
     }
 
 

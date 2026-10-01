@@ -24,6 +24,7 @@ public class Enemy_Crow : EnemyBase
 
     // 定数定義
     private const float MoveAnimationSpan = 0.3f; // 移動アニメーションのスプライト切り替え時間
+    
 
     // Update
     void Update()
