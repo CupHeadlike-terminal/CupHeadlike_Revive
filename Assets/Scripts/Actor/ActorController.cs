@@ -112,6 +112,12 @@ public class ActorController : MonoBehaviour
         {
             rigidbody2D.gravityScale = 0.7f;
         }
+        else
+        {
+            rigidbody2D.gravityScale = 1.0f;
+        }
+
+        Space.space = false;
     }
 
     // Update（1フレームごとに1度ずつ実行）

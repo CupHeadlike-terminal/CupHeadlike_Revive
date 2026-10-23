@@ -6,12 +6,10 @@ public class focus : MonoBehaviour
     public GameObject Stage1;
     public GameObject Stage2;
     public GameObject Stage3;
-    public GameObject Stage4;
     private float Buttonretrytime;
     public Transform Stageone;
     public Transform Stagetwo;
     public Transform Stagethree;
-    public Transform Stagefour;
 
     Rigidbody2D rb;
 
@@ -21,7 +19,6 @@ public class focus : MonoBehaviour
         Stageone = Stage1.transform;
         Stagetwo = Stage2.transform;
         Stagethree = Stage3.transform;
-        Stagefour = Stage4.transform;
     }
 
     // Update is called once per frame
@@ -40,11 +37,12 @@ public class focus : MonoBehaviour
                 Buttonretrytime = 0f;
             }
 
+
             if (StageNumber < 1)
             {
                 StageNumber = 1;
             }
-            if (StageNumber > 4)
+            if (StageNumber > 3)
             {
                 StageNumber--;
             }
@@ -63,10 +61,6 @@ public class focus : MonoBehaviour
         if (StageNumber == 3)
         {
             rb.MovePosition(Stagethree.position);
-        }
-        if (StageNumber == 4)
-        {
-            rb.MovePosition(Stagefour.position);
         }
     }
 }
