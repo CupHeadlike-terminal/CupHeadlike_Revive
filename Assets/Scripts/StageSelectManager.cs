@@ -21,8 +21,8 @@ public class StageSelectManager : MonoBehaviour
     void Start()
     {
         // タイトル画面タップ済みフラグが有効ならタイトル画面を表示しない
-        if (Data.instance.isTitleDisplayed)
-            titlePictureObject.SetActive(false);
+        if (titlePictureObject != null && Data.instance.isTitleDisplayed)
+            titlePictureObject?.SetActive(false);
         // ステージセレクトボタンの色変更
         for (int i = 0; i < stageSelectButtonImages.Count; i++)
         {
@@ -40,7 +40,7 @@ public class StageSelectManager : MonoBehaviour
                 break;
             }
         }
-        stageSelectButtonImages[Data.StageNum_All - 1].gameObject.SetActive(isReady);
+        //stageSelectButtonImages[Data.StageNum_All - 1].gameObject.SetActive(isReady);
     }
 
     /// <summary>
@@ -49,10 +49,12 @@ public class StageSelectManager : MonoBehaviour
     /// <param name="bossID">該当ボスID</param>
     public void OnStageSelectButtonPressed(int bossID)
     {
+        Debug.Log("aefaefaef");
         // ステージID記憶
         Data.instance.nowStageID = bossID;
         // シーン切り替え
         SceneManager.LoadScene(bossID + 1);
+        Debug.Log("ositayo");
     }
 
     /// <summary>
@@ -66,11 +68,15 @@ public class StageSelectManager : MonoBehaviour
         // タイトル画面タップ済みフラグをセット
         Data.instance.isTitleDisplayed = true;
 
-        OnStageSelectButtonPressed(0); // ステージ1へ遷移
+        //OnStageSelectButtonPressed(0); // ステージ1へ遷移
+        SceneManager.LoadScene("StageSelectNEW", LoadSceneMode.Single);
+        Debug.Log("ohauo");
+
     }
 
     void Update()
     {
+        /*
         //Debug.Log("hannnousitao");
         //キーボードでスペースを押すとステージ1に移行
         if(Input.GetKey(KeyCode.Space))
@@ -86,5 +92,6 @@ public class StageSelectManager : MonoBehaviour
         {
             SceneManager.LoadScene("StageSelectNEW",LoadSceneMode.Single);
         }
+        */
     }
 }

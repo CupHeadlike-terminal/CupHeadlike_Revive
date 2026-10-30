@@ -224,7 +224,18 @@
                 {
                     "name": "",
                     "id": "731a5c20-5f61-4a39-9128-ed37019901a5",
-                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/down",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e45a9eb-bbc2-4bdb-a76c-23f39baeaa98",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -235,7 +246,18 @@
                 {
                     "name": "",
                     "id": "77fd905c-c2a1-42f1-a023-72c5d0314df7",
-                    "path": "<Joystick>/stick/left",
+                    "path": "<HID::DragonRise Inc.   Generic   USB  Joystick  >/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df4b6e65-162a-4a67-a0e8-ac96e622e530",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

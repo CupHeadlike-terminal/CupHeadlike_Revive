@@ -108,6 +108,8 @@ public class ActorController : MonoBehaviour
         nowHP = maxHP = InitialHP;
         hpGage.fillAmount = 1.0f; // HPゲージの初期FillAmount
 
+
+        /*
         if(Space.space)// ステージ３の時に重力の影響を弱める
         {
             rigidbody2D.gravityScale = 0.7f;
@@ -118,6 +120,7 @@ public class ActorController : MonoBehaviour
         }
 
         Space.space = false;
+        */
     }
 
     // Update（1フレームごとに1度ずつ実行）
