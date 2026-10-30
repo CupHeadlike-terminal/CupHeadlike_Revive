@@ -184,6 +184,7 @@ public class ActorController : MonoBehaviour
         // カメラに自身の座標を渡す
         cameraController.SetPosition(transform.position);
 
+        /*
         //ジャンプアクションキーボード用
         if (Input.GetKey(KeyCode.Space))
         {
@@ -211,6 +212,7 @@ public class ActorController : MonoBehaviour
                 rigidbody2D.gravityScale = 0.7f;
             }
         }
+        */
         
         
     }
