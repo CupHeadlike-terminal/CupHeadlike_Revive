@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetButton: {fileID: 577640776}
-  triggerKey: 97
+  triggerKey: 268
   inputActions: {fileID: 0}
 --- !u!1 &998040551
 GameObject:
